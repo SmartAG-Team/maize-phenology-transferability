@@ -39,12 +39,13 @@ def weather_agreement():
 f.weather_agreement=weather_agreement
 if __name__=='__main__':
     import argparse
-    parser=argparse.ArgumentParser();parser.add_argument('--figure',choices=['fig1','fig5']);args=parser.parse_args()
-    if args.figure in ['fig1','fig5']:
+    parser=argparse.ArgumentParser();parser.add_argument('--figure',choices=['fig1','fig5','fig10']);args=parser.parse_args()
+    if args.figure in ['fig1','fig5','fig10']:
         plt.rcParams.update({'font.family':'DejaVu Sans','font.size':12,'axes.labelsize':12,'xtick.labelsize':12,'ytick.labelsize':12,'legend.fontsize':12,'axes.titlesize':12,'svg.fonttype':'none','pdf.fonttype':42,'axes.spines.top':False,'axes.spines.right':False})
         if args.figure=='fig1':
             from research.annual_temperature_transfer.workflow import draw
             draw(save)
-        else:f.local_calibration()
+        elif args.figure=='fig5':f.local_calibration()
+        else:f.weather_effects()
     else:f.run()
     print(f.FIG)

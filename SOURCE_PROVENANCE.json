@@ -89,9 +89,9 @@
     },
     {
       "path": "research/annual_temperature_transfer/figures.py",
-      "source_sha256": "93599783706983ee286e30586f901def2e3c230708480c65953e0f401a73c97c",
-      "released_sha256": "93599783706983ee286e30586f901def2e3c230708480c65953e0f401a73c97c",
-      "change": "v1.0.4 removes standalone titles and enforces caption-only titles; scientific fitting unchanged",
+      "source_sha256": "0679cd2c11e53e4b5f7c724966a6140358614d7551b28f05ea6e4d32c25e6003",
+      "released_sha256": "0679cd2c11e53e4b5f7c724966a6140358614d7551b28f05ea6e4d32c25e6003",
+      "change": "weather-effect distribution display; no estimator or fit changes",
       "previous_released_sha256": "b8a7133aa4864eb0d620abe935d1ec4cb7facdf7c4995aec5b0a07668179dde4"
     },
     {
@@ -427,14 +427,14 @@
     },
     {
       "path": "research/annual_temperature_transfer/violin.py",
-      "source_sha256": "75df0d3e77ed7b0fc47d2081a84b4e306629d57ce8e566b46cce9a8ed65a4e1b",
-      "released_sha256": "75df0d3e77ed7b0fc47d2081a84b4e306629d57ce8e566b46cce9a8ed65a4e1b",
-      "change": "new descriptive visualization helper for paired frozen outputs"
+      "source_sha256": "bcb2e0e77dbcc879582e2ec16675b96b2e371627d44b6c21b78eb202253538a9",
+      "released_sha256": "bcb2e0e77dbcc879582e2ec16675b96b2e371627d44b6c21b78eb202253538a9",
+      "change": "weather-effect distribution display; no estimator or fit changes"
     }
   ],
   "full_data_delivery": "Complete model-ready study dataset and all supporting fitted-result files in three versioned GitHub Release assets; provider raw products and unrelated datasets retain the scope described in README.md.",
   "full_model_ready_study_dataset_included": true,
-  "figure_code_version": "1.0.4",
+  "figure_code_version": "1.0.5",
   "figure5_revision": "Paired local-history violin distributions; frozen inputs, models, accuracy curves and intervals retained.",
   "original_acquisition_archive_scope": {
     "included_in_full": false,
@@ -444,5 +444,6 @@
   },
   "documentation_version": "1.0.2",
   "figure1_revision": "Question-led workflow, shared input/calibration foundation, model palette and four parallel comparison cards.",
-  "figure_title_policy": "Standalone titles omitted; descriptions retained in captions."
+  "figure_title_policy": "Standalone titles omitted; descriptions retained in captions.",
+  "figure10_revision": "Paired weather-effect violins; three source draws averaged before equal-head/site weighting, original means and paired confidence intervals preserved, complete observed tails retained."
 }

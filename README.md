@@ -91,3 +91,12 @@ Version **v1.0.3** improves Figure 1 with shared inputs and calibration controls
 ## Figure title policy
 
 Figures have no standalone titles. Descriptive titles belong in captions. Axis labels, legends, panel letters and labels inside workflow nodes retain their explanatory roles. The renderer rejects figure and axes titles; the workflow verifier rejects standalone text outside diagram nodes.
+
+## Weather-effect distributions
+
+Version **v1.0.5** displays the paired weather effects in Figure 10 as 18 violin distributions. Three source draws are averaged before weighting sites equally within each of seven equally weighted native endpoints. The original paired means and station/block confidence intervals remain unchanged; white diamonds mark descriptive medians. Gaussian density is computed in raw days; the signed-asinh display retains complete observed tails.
+
+```sh
+.venv/bin/python scripts/render_figures.py --figure fig10
+.venv/bin/python scripts/verify_weather_violins.py
+```

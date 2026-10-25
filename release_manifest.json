@@ -1,5 +1,5 @@
 {
-  "version": "1.0.4",
+  "version": "1.0.5",
   "files": [
     {
       "path": ".gitignore",
@@ -9,7 +9,7 @@
     {
       "path": "CITATION.cff",
       "bytes": 422,
-      "sha256": "76e24e61ccbabc2b151029a0c72f3444ce55f45bb39eae935a8bf5e2d1bd0ec6"
+      "sha256": "5dd8f3c360d37329f955e44bdc6725fcb590b41e57ab48522e1607846481fa29"
     },
     {
       "path": "DATA_SOURCES.md",
@@ -18,13 +18,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 9355,
-      "sha256": "3edeb57108e9816b689e2d5ac774b040828c343a116e019da31c0a1cc646655f"
+      "bytes": 9948,
+      "sha256": "44d03f0602dac3ae2f2ef71948ccee94f52e978ccb64adff33778ed8fea5cf7f"
     },
     {
       "path": "SOURCE_PROVENANCE.json",
-      "bytes": 22562,
-      "sha256": "13c9a3afff849e7b72147f09838368e42cb863f7bf4d3faaf123def7c22a9a43"
+      "bytes": 22744,
+      "sha256": "0bbb39b68e77e4ed506944519a4072781a35ee673faed4c30dca195b6f6f2479"
     },
     {
       "path": "evidence/analysis_verification.json",
@@ -1153,13 +1153,13 @@
     },
     {
       "path": "plot_data/fig10.xlsx",
-      "bytes": 7592,
-      "sha256": "5ca5d6abeb31530b5d3bccbdb4780e486c94cf011ef957a3ec46772de70da7e3"
+      "bytes": 2584816,
+      "sha256": "726d813636dfab8dbdd406a55d56ee8d9e155c5ec49aed94086eb0ebbe19c9b1"
     },
     {
       "path": "plot_data/fig10_caption.txt",
-      "bytes": 1281,
-      "sha256": "05741c3dfb51967e22be7763ab5ce562bfa699091874ab40e53bf08be2655833"
+      "bytes": 1045,
+      "sha256": "0d2ebba1295cf9b4a8f9ababcc6b967acfafb08195f399a4948e28663b108d1c"
     },
     {
       "path": "plot_data/fig1_caption.txt",
@@ -1303,8 +1303,8 @@
     },
     {
       "path": "research/annual_temperature_transfer/figures.py",
-      "bytes": 22946,
-      "sha256": "93599783706983ee286e30586f901def2e3c230708480c65953e0f401a73c97c"
+      "bytes": 24706,
+      "sha256": "0679cd2c11e53e4b5f7c724966a6140358614d7551b28f05ea6e4d32c25e6003"
     },
     {
       "path": "research/annual_temperature_transfer/fit.py",
@@ -1343,8 +1343,8 @@
     },
     {
       "path": "research/annual_temperature_transfer/violin.py",
-      "bytes": 2883,
-      "sha256": "75df0d3e77ed7b0fc47d2081a84b4e306629d57ce8e566b46cce9a8ed65a4e1b"
+      "bytes": 5704,
+      "sha256": "bcb2e0e77dbcc879582e2ec16675b96b2e371627d44b6c21b78eb202253538a9"
     },
     {
       "path": "research/annual_temperature_transfer/weather.py",
@@ -1568,8 +1568,8 @@
     },
     {
       "path": "scripts/render_figures.py",
-      "bytes": 2832,
-      "sha256": "e821103c6454c9281b34fa4b9adbcef0a6b9a5056468c1b28c8f06276349a25e"
+      "bytes": 2901,
+      "sha256": "b37fea41747662c4f90a1d470a12107b4cbbd25e046d84393ad94b010d626b1b"
     },
     {
       "path": "scripts/restore_full_data.py",
@@ -1585,6 +1585,11 @@
       "path": "scripts/verify_release.py",
       "bytes": 710,
       "sha256": "131919cd9720e8b228949425bc911491c0919e9608740d5413ce7408c8a0938c"
+    },
+    {
+      "path": "scripts/verify_weather_violins.py",
+      "bytes": 3747,
+      "sha256": "96f4c87c899468143d600425d10209a02e18247f9e06928cd9a1da39cc8499b6"
     },
     {
       "path": "scripts/verify_workflow.py",

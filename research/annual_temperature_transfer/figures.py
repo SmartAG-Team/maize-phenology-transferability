@@ -99,26 +99,47 @@ def curves():
 
 
 def weather_effects():
-    f=pd.read_csv(OUT/'weather/analysis/paired_contrasts.csv');f=f[f.period.eq('later_held')].copy()
-    fig,axes=plt.subplots(2,1,figsize=(19/2.54,14/2.54),sharex=True)
-    for comparison,offset,marker,color,label in [('fixed_era5_swap_dwd',-.12,'o','#0072B2','ERA5 fit → DWD input'),('fixed_dwd_swap_era5',.12,'s','#D55E00','DWD fit → ERA5 input')]:
-        q=f[f.comparison.eq(comparison)].set_index('model').reindex(MODELS)
-        axes[0].errorbar(np.arange(6)+offset,q.difference,yerr=np.array([q.difference-q.ci_low,q.ci_high-q.difference]),fmt=marker,color=color,capsize=3,label=label)
-    q=f[f.comparison.eq('matched_dwd_minus_era5')].set_index('model').reindex(MODELS)
+    from .violin import weather_difference_distribution
+    from matplotlib.patches import Patch
+    from matplotlib.lines import Line2D
+    raw=pd.read_csv(OUT/'weather/analysis/paired_site_differences.csv.gz')
+    reference=pd.read_csv(OUT/'weather/analysis/paired_contrasts.csv')
+    paired,summary,densities=weather_difference_distribution(raw,reference,MODELS)
+    fig,axes=plt.subplots(2,1,figsize=(19/2.54,15.8/2.54),sharex=True,sharey=True)
+    fig.subplots_adjust(left=.15,right=.985,bottom=.11,top=.82,hspace=.22)
+    cases=[('fixed_era5_swap_dwd',-.18,'#0072B2'),('fixed_dwd_swap_era5',.18,'#D55E00')]
+    for comparison,offset,color in cases:
+        for i,model in enumerate(MODELS):
+            q=densities[densities.model.eq(model)&densities.comparison.eq(comparison)]
+            r=summary[summary.model.eq(model)&summary.comparison.eq(comparison)].iloc[0]
+            center=i+offset;width=.14*q.relative_density
+            axes[0].fill_betweenx(q.difference_days,center-width,center+width,color=color,alpha=.30,edgecolor=color,linewidth=.7)
+            axes[0].errorbar(center+.035,r.difference,yerr=[[r.difference-r.ci_low],[r.ci_high-r.difference]],fmt='o',color='#222222',capsize=2,markersize=4,zorder=4)
+            axes[0].plot(center-.035,r.weighted_median_days,'D',markerfacecolor='white',markeredgecolor='#222222',markersize=3.5,zorder=4)
     for i,model in enumerate(MODELS):
-        a=q.loc[model];axes[1].errorbar(i,a.difference,yerr=np.array([[a.difference-a.ci_low],[a.ci_high-a.difference]]),fmt='o',color=COLORS[model],capsize=3)
+        q=densities[densities.model.eq(model)&densities.comparison.eq('matched_dwd_minus_era5')]
+        r=summary[summary.model.eq(model)&summary.comparison.eq('matched_dwd_minus_era5')].iloc[0]
+        width=.30*q.relative_density
+        axes[1].fill_betweenx(q.difference_days,i-width,i+width,color=COLORS[model],alpha=.34,edgecolor=COLORS[model],linewidth=.7)
+        axes[1].errorbar(i+.055,r.difference,yerr=[[r.difference-r.ci_low],[r.ci_high-r.difference]],fmt='o',color='#222222',capsize=3,markersize=4,zorder=4)
+        axes[1].plot(i-.055,r.weighted_median_days,'D',markerfacecolor='white',markeredgecolor='#222222',markersize=4,zorder=4)
     for ax,mark in zip(axes,['(a)','(b)']):
-        panel(ax,mark);ax.axhline(0,color='.5',linestyle='--',linewidth=.7);ax.grid(axis='y',color='.92',linewidth=.6);ax.set_ylabel('MAE difference (days)')
-    axes[0].legend(frameon=False,loc='upper left',bbox_to_anchor=(0,1.28),ncol=2)
-    axes[1].set_xticks(range(6),['T','Nonlinear T','RF','MLP','Thermal\nTransformer','Support\nblend'])
-    caption=('Fig. 10. Sensitivity to station-observed DWD weather and model-based gridded ERA5-Land reanalysis weather (0.1°) on identical native phenology observations. '
-        '(a) Error change after substituting the other weather product with fitted parameters and normalization held fixed; the reference is each fit’s own training product. '
-        '(b) DWD-minus-ERA5 error after fitting and evaluating each model on its respective product. Negative values in (b) favour the DWD-specific fit. '
-        'Every product uses the same 40 source sites, four distinct 2001–2010 years/site, source validation budgets and native 2011–2024 targets in five spatial folds and three source draws. '
-        'All 367 native input days require quality-controlled DWD temperature extremes with explicit 00–24 UTC observation windows and time-valid station positions within 10 km of the native weather-cell centre. '
-        'Connected source block/station groups remain whole in inner validation and teacher fitting. Whiskers are 95% paired intervals from connected target station/spatial-block resamples, conditional on fitted models. Native-block-only intervals are retained as a sensitivity. '
-        'The comparison includes weather-product and station/grid representativeness differences; DWD station weather is not assumed to be exact field weather.')
-    save(fig,'fig10',{'plotted_data':f},caption)
+        panel(ax,mark);ax.set_yscale('asinh',linear_width=2);ax.set_ylim(-400,400)
+        ticks=[-100,-30,-10,-3,0,3,10,30,100];ax.set_yticks(ticks,[str(t).replace('-','−') for t in ticks])
+        ax.axhline(0,color='.45',linestyle='--',linewidth=.75);ax.grid(axis='y',color='.93',linewidth=.6);ax.set_axisbelow(True)
+        ax.set_ylabel('Paired MAE difference (days)')
+    axes[1].set_xticks(range(6),['T','Nonlinear\nT','RF','MLP','Thermal\nTransformer','Support\nblend']);axes[1].set_xlim(-.55,5.55)
+    fig.legend(handles=[Patch(facecolor='#0072B2',alpha=.30,label='ERA5 fit → DWD input'),Patch(facecolor='#D55E00',alpha=.30,label='DWD fit → ERA5 input')],loc='upper center',bbox_to_anchor=(.5,1.005),ncol=2,frameon=False)
+    fig.legend(handles=[Line2D([],[],color='#222222',marker='o',markersize=4,label='Mean and 95% CI'),Line2D([],[],color='none',marker='D',markerfacecolor='white',markeredgecolor='#222222',markersize=4,label='Median')],loc='upper center',bbox_to_anchor=(.5,.94),ncol=2,frameon=False)
+    caption=('Fig. 10. Distributions of weather-product effects on common maize dates. '
+        '(a) Paired error changes under fixed-parameter weather swaps, relative to each fit’s own product. '
+        '(b) DWD-minus-ERA5 errors after product-specific refitting; negative values favour the DWD-specific fit. '
+        'Each distribution contains 1,698 site–endpoint pairs at 268 sites, after averaging three source draws. '
+        'Density weights are equal across seven native endpoints, then across sites within endpoints. Gaussian kernels use Scott bandwidth in untransformed days and equal maximum widths. '
+        'The signed asinh axis (2-day linear width) retains all tails; ticks are days. Black circles/whiskers retain the mean contrasts and conditional 95% intervals from connected station/spatial-block resampling; white diamonds show weighted medians. '
+        'Matched source budgets are 40 sites × four 2001–2010 years in five folds; targets span 2011–2024. '
+        'DWD station observations and ERA5-Land reanalysis (0.1°) have different spatial supports. DWD is not assumed to be exact field weather.')
+    save(fig,'fig10',{'plotted_data':summary,'paired_values':paired,'density_curves':densities,'original_contrasts':reference[reference.period.eq('later_held')]},caption,layout=False)
 
 
 def weather_agreement():

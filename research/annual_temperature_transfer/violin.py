@@ -40,3 +40,38 @@ def local_gain_distribution(sites,contrasts,models):
             displayed_halfwidth=.34*density/density.max())))
     paired['panel']='(b)'
     return paired,pd.DataFrame(rows),pd.concat(densities,ignore_index=True)
+
+
+def weather_difference_distribution(sites,contrasts,models):
+    """Average source draws before descriptive density; retain frozen paired CIs."""
+    comparisons=['fixed_era5_swap_dwd','fixed_dwd_swap_era5','matched_dwd_minus_era5']
+    raw=sites[sites.period.eq('later_held')&sites.model.isin(models)&sites.comparison.isin(comparisons)].copy()
+    keys=['model','comparison','head','site','block','fold']
+    if raw.duplicated(keys+['draw']).any():raise ValueError('Repeated weather site/endpoint/draw')
+    if not raw.groupby(keys).draw.nunique().eq(3).all():raise ValueError('Incomplete source-draw support')
+    paired=raw.groupby(keys,as_index=False).error.mean().rename(columns={'error':'difference_days'})
+    paired['panel']=np.where(paired.comparison.eq('matched_dwd_minus_era5'),'(b)','(a)')
+    rows=[];curves=[];identity=None
+    for comparison in comparisons:
+        for model in models:
+            q=paired[paired.model.eq(model)&paired.comparison.eq(comparison)]
+            support=set(map(tuple,q[['head','site','block','fold']].to_numpy()))
+            if identity is not None and support!=identity:raise ValueError('Weather comparison supports differ')
+            identity=support
+            if q['head'].nunique()!=7 or not np.isfinite(q.difference_days).all():raise ValueError('Incomplete weather head support')
+            weights=1/(7*q.groupby('head').difference_days.transform('size').to_numpy())
+            paired.loc[q.index,'density_weight']=weights
+            values=q.difference_days.to_numpy();mean=float(np.dot(values,weights))
+            ref=contrasts[contrasts.period.eq('later_held')&contrasts.model.eq(model)&contrasts.comparison.eq(comparison)]
+            if len(ref)!=1 or abs(mean-ref.iloc[0].difference)>1e-10:raise ValueError('Weather density mean disagrees with frozen contrast')
+            order=np.argsort(values);cdf=np.cumsum(weights[order])-weights[order]/2
+            grid=np.linspace(values.min(),values.max(),601)
+            density=gaussian_kde(values,weights=weights,bw_method='scott')(grid)
+            rows.append(dict(model=model,comparison=comparison,weighted_mean_days=mean,
+                weighted_median_days=float(np.interp(.5,cdf,values[order])),
+                site_endpoint_pairs=len(q),minimum_days=float(values.min()),maximum_days=float(values.max())))
+            curves.append(pd.DataFrame(dict(model=model,comparison=comparison,panel=q.panel.iloc[0],
+                difference_days=grid,density_per_day=density,relative_density=density/density.max())))
+    summary=contrasts[contrasts.period.eq('later_held')].merge(pd.DataFrame(rows),on=['model','comparison'],validate='one_to_one')
+    summary['panel']=np.where(summary.comparison.eq('matched_dwd_minus_era5'),'(b)','(a)')
+    return paired,summary,pd.concat(curves,ignore_index=True)
