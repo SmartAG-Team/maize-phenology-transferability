@@ -78,3 +78,12 @@ Figure 5 retains the accuracy curve and adds all 5,323 matched site–endpoint g
 ## Reproduction boundary
 
 Version **v1.0.2** clarifies the boundary between offline numerical reproduction and source reacquisition. All reported model comparisons and figures can be reconstructed offline from the supplied qualified inputs, saved fits and keyed predictions. The reference climatology is supplied as frozen Earth Engine aggregates, calendar-completeness receipts and site assignments; the complete 1981–2010 daily ERA5-Land reference-grid series is not locally archived. Recomputing that source aggregation requires authorized access to the specified provider collection and a fresh output directory, preserving the original receipt guards. Source products retain their own versions and day conventions. Full model retraining and live weather reacquisition are separate operations from replaying frozen results.
+
+## Workflow figure
+
+Version **v1.0.3** improves Figure 1 with shared inputs and calibration controls, six consistently coloured model formulations, four parallel comparison cards and a common evaluation step. Conceptual node/edge coordinates, text placement and encodings are in `plot_data/fig1.xlsx`; they represent study design, not measured performance values.
+
+```sh
+.venv/bin/python scripts/render_figures.py --figure fig1
+.venv/bin/python scripts/verify_workflow.py
+```

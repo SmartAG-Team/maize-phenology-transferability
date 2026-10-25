@@ -162,9 +162,10 @@
     },
     {
       "path": "research/annual_temperature_transfer/workflow.py",
-      "source_sha256": "96dcd5cdb25b8e98609e62b63f7de98b2666e6a6f3578564b207545d637f223e",
-      "released_sha256": "96dcd5cdb25b8e98609e62b63f7de98b2666e6a6f3578564b207545d637f223e",
-      "change": "none"
+      "source_sha256": "aa7933a20212936818b85c4e141dd397caccc45576ffa45030a458ac8b8b3428",
+      "released_sha256": "aa7933a20212936818b85c4e141dd397caccc45576ffa45030a458ac8b8b3428",
+      "change": "v1.0.3 conceptual workflow layout and explicit diagram-coordinate data; scientific fitting unchanged",
+      "previous_released_sha256": "96dcd5cdb25b8e98609e62b63f7de98b2666e6a6f3578564b207545d637f223e"
     },
     {
       "path": "research/environment_sowing_transfer/evaluate_foreign.py",
@@ -433,7 +434,7 @@
   ],
   "full_data_delivery": "Complete model-ready study dataset and all supporting fitted-result files in three versioned GitHub Release assets; provider raw products and unrelated datasets retain the scope described in README.md.",
   "full_model_ready_study_dataset_included": true,
-  "figure_code_version": "1.0.1",
+  "figure_code_version": "1.0.3",
   "figure5_revision": "Paired local-history violin distributions; frozen inputs, models, accuracy curves and intervals retained.",
   "original_acquisition_archive_scope": {
     "included_in_full": false,
@@ -441,5 +442,6 @@
     "reference_climate": "Frozen reference aggregates, calendar-completeness receipts and site assignments are supplied. The full 1981\u20132010 daily reference-grid series is not locally archived; its reaggregation requires authorized provider access.",
     "unrelated_collections": "Other countries and unused acquired collections are outside this study release."
   },
-  "documentation_version": "1.0.2"
+  "documentation_version": "1.0.2",
+  "figure1_revision": "Question-led workflow, shared input/calibration foundation, model palette and four parallel comparison cards."
 }

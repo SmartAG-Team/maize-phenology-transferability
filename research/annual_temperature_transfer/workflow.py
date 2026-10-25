@@ -1,54 +1,113 @@
-"""Conceptual study workflow; node and edge data accompany the figure."""
+"""Study workflow with a shared model/input foundation and parallel comparisons."""
+import json
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch,FancyArrowPatch
+from matplotlib.colors import to_rgb
+
+MODEL_COLORS={'T':'#666666','nonlinear_T':'#E69F00','residual_RF':'#009E73','residual_MLP':'#0072B2','thermal_transformer':'#56B4E9','support_blend':'#882255'}
+CAPTION=('Fig. 1. Workflow for evaluating phenology transferability. '
+    '(a) Pooled model performance. (b) Local updating from historical observations. '
+    '(c) Transfer among annual-temperature zones, including the 40-site pooled control. '
+    '(d) DWD/ERA5-Land substitutions and product-specific refits. '
+    'Fitting, selection, residual teachers and normalization use pre-2011 data. Paired targets are common within comparisons; budgets and cohorts differ between comparisons. '
+    'Local updating uses five models and source draw 17. Annual temperature defines zones; growing-season climate defines blend support. '
+    'Intervals condition on fitted models. Predictions assume supplied weather. Node/edge data accompany the figure. '
+    'Layout code was assisted by OpenAI Codex (GPT-6) and rendered with Matplotlib.')
 
 
 def draw(save):
-    fig,ax=plt.subplots(figsize=(19/2.54,17.4/2.54))
-    fig.subplots_adjust(left=.015,right=.985,bottom=.015,top=.985)
-    ax.set(xlim=(0,19),ylim=(0,17.4));ax.axis('off')
-    nodes=[];edges=[]
-    def box(key,x,y,width,height,text,fill,stroke='#87949E'):
-        patch=FancyBboxPatch((x,y),width,height,boxstyle='round,pad=0.06,rounding_size=0.12',
-                             facecolor=fill,edgecolor=stroke,linewidth=.9)
-        ax.add_patch(patch)
-        ax.text(x+width/2,y+height/2,text,ha='center',va='center',fontsize=12,linespacing=1.25,color='#192D3C')
-        nodes.append(dict(node=key,x_cm=x,y_cm=y,width_cm=width,height_cm=height,label=text,display='conceptual workflow; no measured result'))
-    def arrow(source,target,start,end):
-        ax.add_patch(FancyArrowPatch(start,end,arrowstyle='-|>',mutation_scale=11,color='#738390',linewidth=.9))
-        edges.append(dict(source=source,target=target,start_x_cm=start[0],start_y_cm=start[1],end_x_cm=end[0],end_y_cm=end[1]))
-    box('qualified_data',.18,15.6,18.64,1.5,
-        'Qualified native maize dates and daily weather\nSeven BBCH endpoints; original definitions and provenance retained','#EDF3F6')
-    box('separation',.18,12.9,18.64,1.95,
-        'Source labels and fitting-weather prefixes end by 2010\nFive spatial folds: 50-km blocks; 25-km cell-centre buffer\nSource-only model selection, residual teachers and normalization','#E3EDF3')
-    arrow('qualified_data','separation',(9.5,15.52),(9.5,14.93))
-    box('models',.18,10.35,18.64,1.8,
-        'Six core model families\nT · nonlinear T · residual RF · residual MLP\nThermal Transformer · source-support blend','#F3F0E7')
-    arrow('separation','models',(9.5,12.82),(9.5,12.23))
+    fig=plt.figure(figsize=(19/2.54,18.5/2.54))
+    ax=fig.add_axes([0,0,1,1]);ax.set(xlim=(0,19),ylim=(0,19));ax.axis('off')
+    ink='#223B4A';line='#81929D';nodes=[];edges=[];labels=[];containers=[]
+    def text(key,x,y,label,ha='left',bold=False,container=None,**kw):
+        item=ax.text(x,y,label,ha=ha,va='center',fontsize=12,fontweight='bold' if bold else 'normal',
+                     color=ink,linespacing=1.3,**kw)
+        labels.append((key,item,container))
+        return item
+    def box(key,x,y,w,h,fill='#F4F7F8',stroke='#B8C5CD',kind='shared'):
+        patch=FancyBboxPatch((x,y),w,h,boxstyle='round,pad=0,rounding_size=.10',
+            facecolor=fill,edgecolor=stroke,linewidth=.8,zorder=2)
+        patch.set_gid(key);ax.add_patch(patch);containers.append((key,patch))
+        nodes.append(dict(node=key,x_layout=x,y_layout=y,width_layout=w,height_layout=h,
+            kind=kind,parent_node='models' if kind=='model formulation' else '',fill=fill,stroke=stroke,coordinate_basis='arbitrary diagram layout coordinates; not measured or geographic',
+            display='conceptual study design; no measured performance values'))
+        return patch
+    def edge(source,target,points,arrow=True,draw=True):
+        edges.append(dict(source=source,target=target,path=json.dumps(points),direction='source to target'))
+        if not draw:return
+        if len(points)>2:ax.plot(*np.array(points[:-1]).T,color=line,linewidth=.85,zorder=1)
+        start,end=points[-2:]
+        if arrow:ax.add_patch(FancyArrowPatch(start,end,arrowstyle='-|>',mutation_scale=9,
+            color=line,linewidth=.85,shrinkA=0,shrinkB=0,zorder=1))
+        else:ax.plot([start[0],end[0]],[start[1],end[1]],color=line,linewidth=.85,zorder=1)
+
+    text('question',9.5,18.25,'How do model structure and input information\njointly influence phenology transferability?',ha='center',bold=True)
+    left,right,width=.4,9.9,8.7
+    data=box('qualified_data',left,14.4,width,2.85)
+    text('data_heading',left+.4,16.73,'Data and provenance',bold=True,container=data)
+    text('data_body',left+.4,15.55,'Observed maize event dates\nDaily weather at native cells\nSeven BBCH endpoints',container=data)
+    control=box('separation',right,14.4,width,2.85)
+    text('control_heading',right+.4,16.73,'Calibration and testing',bold=True,container=control)
+    text('control_body',right+.4,15.55,'Fitting data end by 2010\n5 folds · 50-km spatial blocks\n25-km cell-centre buffer',container=control)
+    for source,center in [('qualified_data',4.75),('separation',14.25)]:
+        edge(source,'shared_inputs',[(center,14.4),(center,14.1),(9.5,14.1)],arrow=False)
+    edge('shared_inputs','models',[(9.5,14.1),(9.5,13.9)],arrow=False)
+
+    models=box('models',.4,11.6,18.2,2.30,fill='#FBFCFC')
+    text('models_heading',.8,13.50,'Six model formulations',bold=True,container=models)
+    names=[('T','T'),('nonlinear_T','Nonlinear\nT'),('residual_RF','Residual\nRF'),
+           ('residual_MLP','Residual\nMLP'),('thermal_transformer','Thermal\nTransformer'),('support_blend','Support\nblend')]
+    for i,(key,label) in enumerate(names):
+        x=.67+i*2.97;color=MODEL_COLORS[key];tint=tuple(.90+.10*v for v in to_rgb(color))
+        chip=box(key,x,11.75,2.78,1.24,fill=tint,stroke=color,kind='model formulation')
+        text('model_'+key,x+1.39,12.37,label,ha='center',container=chip)
     branches=[
-        ('benchmark','Pooled benchmark\n80 sites × 8 years\nRandom / coverage\n3 draws × 5 folds\n\nStage errors; gross\nand net corrections','#EAF1F6'),
-        ('local','Local calibration\n0/1/3/5 past years\n80-site source fit\n1 draw × 5 folds\n\nFive models; shared\ndate-offset updates','#EDF3EC'),
-        ('transfer','Climate transfer\n40 sites × 8 years\n5 zones + pooled\n3 draws × 5 folds\n\nExcess loss; distance\nand source support','#F6F0E3'),
-        ('weather','Weather comparison\n40 sites × 4 years\nDWD / ERA5-Land\n3 draws × 5 folds\n\nFixed-input swaps;\nown-product refits','#F1EDF5')]
-    centers=[]
-    for i,(key,label,fill) in enumerate(branches):
-        x=.18+i*4.76;width=4.36;center=x+width/2;centers.append(center)
-        box(key,x,4.85,width,4.55,label,fill)
-        ax.plot([center,center],[9.48,9.85],color='#738390',linewidth=.9)
-        arrow('models',key,(center,9.85),(center,9.48))
-        edges[-1]['via']='shared branch connector at y=9.85 cm'
-    ax.plot([centers[0],centers[-1]],[9.85,9.85],color='#738390',linewidth=.9)
-    ax.plot([9.5,9.5],[10.27,9.85],color='#738390',linewidth=.9)
-    box('evaluation',.18,1.35,18.64,2.35,
-        'Later held outcomes: 2011–2025; weather cohort: 2011–2024\nIdentical native targets within each paired experiment\nHead-balanced penalised MAE; invalid dates receive 366 d\nConditional 95% intervals from paired spatial/station-block resampling','#E5EEF0')
-    for center,(key,_,_) in zip(centers,branches):
-        arrow(key,'evaluation',(center,4.77),(center,3.78))
-    ax.text(9.5,.52,'Experimental cohorts and source budgets remain distinct.',ha='center',va='center',fontsize=12,color='#344D5B')
-    caption=('Fig. 1. Overall study workflow. Qualified native dates and weather enter spatially separated, source-only fitting. '
-        'Four branches address pooled performance, local history, annual-temperature transfer and weather sensitivity. '
-        'The transfer branch also supplies the 40-site pooled benchmark control. Local calibration uses five date-offset models, the frozen 80-site coverage fit and draw 17. '
-        'Weather fits use identical product-specific memberships with four source years/site and preserve shared-station groups. '
-        'Paired contrasts retain common outcomes within each experiment; source budgets and target cohorts differ between branches. '
-        'Annual reference temperature defines transfer zones; growing-season climate defines blend support. Intervals condition on fitted models. Predictions assume supplied weather. Node and edge data accompany the figure.')
-    save(fig,'fig1',{'plotted_data':pd.DataFrame(nodes),'nodes':pd.DataFrame(nodes),'edges':pd.DataFrame(edges)},caption,layout=False)
+      ('benchmark','(a)','Model performance',left,7.55,'#EEF3F7',
+       '80 sites × 8 years · 3 draws\nRandom / coverage sampling\nStage errors; benefit and harm'),
+      ('local','(b)','Local information',right,7.55,'#EFF5F1',
+       '0, 1, 3 or 5 past local years\n80-site coverage fit · 1 draw\nFive models; shared date offsets'),
+      ('transfer','(c)','Environmental transfer',left,3.7,'#F8F3E9',
+       '40 sites × 8 years · 3 draws\n5 temperature zones + pooled\nPaired transfer loss and distance'),
+      ('weather','(d)','Weather inputs',right,3.7,'#F3EFF7',
+       '40 sites × 4 years · 3 draws\nDWD station / ERA5-Land inputs\nWeather swaps and refitting')]
+    for key,mark,heading,x,y,fill,body in branches:
+        card=box(key,x,y,width,3.1,fill=fill,kind='parallel comparison')
+        text(key+'_panel',x+.4,y+2.57,mark,bold=True,container=card)
+        text(key+'_heading',x+1.15,y+2.57,heading,bold=True,container=card)
+        text(key+'_body',x+.4,y+1.32,body,container=card)
+        nodes[-1].update(panel=mark,label=heading,details=body)
+        center=x+width/2
+        if key in ['benchmark','local']:
+            edge('models',key,[(9.5,11.6),(9.5,11.1),(center,11.1),(center,y+3.18)])
+        else:
+            side=.12 if x==left else 18.88
+            edge('models',key,[(9.5,11.6),(9.5,11.1),(side,11.1),(side,7.15),(center,7.15),(center,y+3.18)])
+        inside=x+width if x==left else x
+        edge(key,'paired_comparisons',[(inside,y+1.55),(9.5,y+1.55),(9.5,3.55)],arrow=False,draw=False)
+        ax.plot([inside,9.5],[y+1.55,y+1.55],color=line,linewidth=.85,zorder=1)
+    ax.plot([9.5,9.5],[9.10,3.55],color=line,linewidth=.85,zorder=1)
+    ax.plot([9.5,9.5],[9.10,5.25],'o',color=line,markersize=2.5,zorder=1)
+    edge('paired_comparisons','evaluation',[(9.5,3.55),(9.5,3.08)])
+    evaluation=box('evaluation',.4,.4,18.2,2.6,fill='#EAF1F4',stroke='#9EAFBA')
+    text('evaluation_heading',.8,2.53,'Paired evaluation under specified conditions',bold=True,container=evaluation)
+    text('evaluation_body',.8,1.40,
+        '2011–2025 outcomes; weather cohort: 2011–2024\nPenalised MAE; equal endpoint weights · Invalid dates: 366 d\n95% conditional intervals · Spatial / station groups',container=evaluation)
+
+    fig.canvas.draw();renderer=fig.canvas.get_renderer();checks=[]
+    for key,item,container in labels:
+        bounds=item.get_window_extent(renderer)
+        if container is not None:
+            frame=container.get_window_extent(renderer)
+            fits=(bounds.x0>=frame.x0+2 and bounds.x1<=frame.x1-2 and bounds.y0>=frame.y0+2 and bounds.y1<=frame.y1-2)
+            if not fits:print('CARD_OVERFLOW',key,'text',bounds.bounds,'card',frame.bounds)
+        else:fits=True
+        checks.append(dict(label=key,text=item.get_text(),font_pt=12,font_weight=item.get_fontweight(),horizontal_alignment=item.get_ha(),container_node=container.get_gid() if container is not None else '',within_container=bool(fits),
+            x_layout=item.get_position()[0],y_layout=item.get_position()[1]))
+    if not all(r['within_container'] for r in checks):raise ValueError('Workflow card/text geometry failed')
+    for key,x,y in [('shared_inputs',9.5,14.1),('paired_comparisons',9.5,3.55)]:
+        nodes.append(dict(node=key,x_layout=x,y_layout=y,width_layout=0,height_layout=0,kind='connector junction',coordinate_basis='arbitrary diagram layout coordinates; not measured or geographic',display='conceptual connection'))
+    node_data=pd.DataFrame(nodes)
+    save(fig,'fig1',{'plotted_data':node_data,'nodes':node_data,'edges':pd.DataFrame(edges),
+        'labels':pd.DataFrame(checks),'encodings':pd.DataFrame([dict(model=k,color=v) for k,v in MODEL_COLORS.items()])},CAPTION,layout=False)
