@@ -1,0 +1,25 @@
+{
+  "complete": true,
+  "input_sha256": {
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/site_zones.csv": "acf680f61846cd2ae12a23cbf27f7a50c5a712517fe4c2ce3a3206a8c765fce8",
+    "source_workspace/maize_phen_dl/results/phenology_exploration_20261023/year_matched/cases/f0_random_n80_d17/predictions.csv.gz": "92183563703d33113dcd39dfbfa32dad6f3f7cf2f27ccf2d01b9996950f0d265",
+    "source_workspace/maize_phen_dl/results/phenology_exploration_20261023/year_matched/cases/f1_random_n80_d17/predictions.csv.gz": "5e77ba4d7af36c4088a818466e88be536582b040db38f46746a8afbacacd20e9",
+    "source_workspace/maize_phen_dl/results/phenology_exploration_20261023/year_matched/cases/f2_random_n80_d17/predictions.csv.gz": "a3a38dc6925513bfc7ac9ad5cc2fda1d537ad77811576c38d8afd3f412b3864d",
+    "source_workspace/maize_phen_dl/results/phenology_exploration_20261023/year_matched/cases/f3_random_n80_d17/predictions.csv.gz": "15ebd41171f3187d362fc365f33a26d8247985eee92bed9dfab6aa072f420dc9",
+    "source_workspace/maize_phen_dl/results/phenology_exploration_20261023/year_matched/cases/f4_random_n80_d17/predictions.csv.gz": "df172a120fb35e92b9e4251fa41c4a5db868b0f52543264da3db88f3ad006371",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/insights/local_sites.csv.gz": "fd2628f988cefe6938c65f96eca90eb1411f634d6c9054ed22e81d73aed6e4d2",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/common_units.csv.gz": "e93f27ca811afcccf58de7d5dd7a7946b18c6d46c40e8f742330d588df111400"
+  },
+  "code_sha256": "ddf8de524e5ad81b56861ebd74320c5afd403be2875b93dbf25dd5f9fc6b5b7e",
+  "native_labels_unique": true,
+  "availability_categories_disjoint": true,
+  "coordinates": "recorded native weather-cell centres; one conservative monitoring-site group per cell in this qualified network",
+  "period": [
+    1981,
+    2025
+  ],
+  "output_sha256": {
+    "study_network.csv": "e283ddbfab2835063a08745cd84cab8b54fe9114496b34d0e2a48ab8fa8abaec",
+    "study_network_summary.json": "0792d4998b9169b1b1f29a218623be36da925a5d8d69330332b335361d365adb"
+  }
+}

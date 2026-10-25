@@ -1,0 +1,14 @@
+{
+  "complete": true,
+  "providers": [
+    "dwd",
+    "era5"
+  ],
+  "cases_per_provider": 15,
+  "identical_memberships": true,
+  "common_native_units": 3785,
+  "source_station_groups_preserved": true,
+  "source_year_budget": 4,
+  "site_budget": 40,
+  "code_sha256": "ec144658536b0f43a2e56faa5c7055d06b337becd976ffe8bb7d6543b6869d4c"
+}

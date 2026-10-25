@@ -1,0 +1,49 @@
+{
+  "complete": true,
+  "code_sha256": "b5e27fe2fd5e35553d8a81686882eba5863ed7e58e1b247c10e5010573242fbf",
+  "inputs": {
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/dwd_qualification.json": "ceb681950cb9484472ed22d0cdd9630bb5e5ca234cfdf481e5a7863cd8e048b3",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2001.npz": "8b8a82e7e4608dc5c684a05765b613325f3ffb6cb5d0b84cfbb3978911ad0466",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2002.npz": "003b4db11cac3f67e045988d2613b94bfb318e6b7c8b4d3aa9cd00fda3962390",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2003.npz": "f5becc41859265b158d1836e94041770cacc6231ff65c81afe0019092cb036f4",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2004.npz": "b338e424f5ea861fac034b5773d14a808aa3cf5ce656842f09e6f2381d68b2ea",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2005.npz": "ab10da48a0c99ef796e39ce8790127fc2d9f05e24d6cd483aa88d60abd568d14",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2006.npz": "d17ec037eb237dfb374f99cdcbf18456327133e46978bc67dbf722f07df05729",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2007.npz": "5a575aada17f5c66d2c4dab9a3fdde44d108ef9207022c0c32b155e9293391a1",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2008.npz": "e6d5cc274097ce4df192b066adc6486a0d006d8f6dc6786343423134d5ac7ffd",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2009.npz": "081b8d252001bc84ad995d0c7487d2682927c2bd8e574cc65b22536e5cd8dc75",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2010.npz": "c74cdafa23401f8cea8691a55ad9474c8c33a3a0e0b19960c2954e84ab0cb8f8",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2011.npz": "1769cc4544594a81e19137c2a7e56b523b3741a25a10b5e0978dddba80a5f3ec",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2012.npz": "6f0a97f74b5251bc4c28b32896aeafd9ca2b9c3f7d66d52bb323604b53ed77a0",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2013.npz": "81bd1816c9d1ac26ea55de1227816b34ee90720fc2ffa8ff32dcef191b4bb882",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2014.npz": "4cbac9baa59585113800f9fdfcfd127f5f883ae4ac12c2d229fa15478643d23c",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2015.npz": "bba17cd93df38a9672585574cd951f3e5778361e20d406bcde390874bc12f682",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2016.npz": "6ec6b37184ae59065b0b97da3d7f31c7d58ba34e1cec6f4b65745d122cb9dce0",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2017.npz": "e0ced6299c192d922eca4c8af64bf96fc301be5af7a95ae0bb5d8f0dcc571c85",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2018.npz": "bdad677ec8e6ab292692b404d58e764c9c1369e67b41b06b85c57a7c6f5551ec",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2019.npz": "6a727693c833804a5a718914b4aa57eaaad97ed81a946a0766709812402857f3",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2020.npz": "39de5452d3fd34ffc4c671e92a2952b2ece759beba034ca6b3d852a2e887cacb",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2021.npz": "79e93a6357be93072b4df117b5474780d087453ea34ac77466f013200497f38e",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2022.npz": "28cabe46053cc24897e432159cc6f81344f7a652ae3ebef09d256cfcb5edd6dd",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2023.npz": "4be05b90597004354461ee55bf0903e276cd4a0318b71918ee346c52b400d71d",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2024.npz": "bb7844f1931f6cfe10e03a1a39a307a188f9034b9315c6c17c36f5a1fa7afe77",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/era5_land/2025.npz": "eff39f3dce1d72a3ac9a7d650882fe718ad6d12039ba28d774cd754f88b7c5f1"
+  },
+  "observations_used_for_weather_selection": false,
+  "source_years": [
+    2001,
+    2010
+  ],
+  "test_years": [
+    2011,
+    2024
+  ],
+  "common_native_units": 3785,
+  "common_sites": 357,
+  "weather_window_days": 367,
+  "outputs": {
+    "common_inputs.npz": "56d5a2e7354c68324bfe1768f3b67b07caa21ed203a4b878ca28f9fdd57888da",
+    "common_units.csv.gz": "e93f27ca811afcccf58de7d5dd7a7946b18c6d46c40e8f742330d588df111400",
+    "era5_window_audit.csv.gz": "d18a34f7e1a578bac9f38f3f3c8bbbc1c21d8f6a913c10e1b0589855d91d6aaa"
+  }
+}

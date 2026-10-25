@@ -1,0 +1,578 @@
+{
+  "signature": {
+    "case": {
+      "case": "f0_weather_d17",
+      "fold": 0,
+      "source_zone": -1,
+      "draw": 17,
+      "n_sites": 40,
+      "n_years": 4,
+      "source_units": 160,
+      "membership_sha256": "81cc3d432c0e2888db33f3ceab876787d426b466ca2674fc5c934b8897c34aed"
+    },
+    "code": {
+      "source_workspace/maize_phen_dl/research/phenology_exploration/core.py": "0dfee9ef3b7e487bd8dd3913f591ad84aeae3d7af46d7f2ee928a49ed1e68e81",
+      "source_workspace/maize_phen_dl/research/phenology_exploration/data.py": "656ed784ea422bcd7261990e811115ac6c6fadad36366f2b8a1d4ddfc1e217fe",
+      "source_workspace/maize_phen_dl/research/phenology_exploration/models.py": "378041270dd82d83e3df26b5174a9f982048e817a9a25af2604b765cadb236b9",
+      "source_workspace/maize_phen_dl/research/phenology_exploration/experiments.py": "db511afa05c8b0f5dedff189194f437087a9fb429d621ba6a7974e8f3d149282",
+      "source_workspace/maize_phen_dl/research/phenology_exploration/provenance.py": "442a2a19136da59118f5e35da54376bc85335f5c4e3a05154f891ac61ba2b155",
+      "source_workspace/maize_phen_dl/research/phenology_exploration/analysis.py": "54c1e7e1c856327a299fd5c3a5f32d420d2ddf9e3361f5d355a9a4e026939f3c",
+      "source_workspace/maize_phen_dl/research/phenology_exploration/neural.py": "b766a737aa9cee73e7f53d37a4f0f9e43da82dd1758b61bdc00459aa0fb7d5b5",
+      "source_workspace/maize_phen_dl/research/phenology_exploration/support_blend.py": "ef2d469af1f7ce707513e821701340d06ee1b3cde119dbb9700941d3f2bcc75a",
+      "source_workspace/maize_phen_dl/research/europe_climate_transfer/joint_data.py": "792ba4d8832a0bbe7682cb27f2fb8dc109087e2d53760602ef6c2a5aca66e957",
+      "source_workspace/maize_phen_dl/research/sowing_day_transfer/multistage_models.py": "d24b705fe7c9c376b59626c77497134dd0ea6aee0d3e4d315fe5d90dde3b8dd2",
+      "source_workspace/maize_phen_dl/research/annual_temperature_transfer/core.py": "6cba1d4b47fdd54c2e200c783e3e729bfa989007323a5451dc1ba194068c4ff5",
+      "source_workspace/maize_phen_dl/research/annual_temperature_transfer/climate.py": "b55e151fb5ff23c12ee1edd778c3cc2e8a60d1a9a93a796721df8d60cae936d5",
+      "source_workspace/maize_phen_dl/research/annual_temperature_transfer/design.py": "da1c5bf18a54e9c1cbc8066b6bf6efd6336c663fdcf0e267be356e4ed4854a85",
+      "source_workspace/maize_phen_dl/research/annual_temperature_transfer/fit.py": "34a615aca75d7f08b7ffa92e93b63e94ee8e9ef40ccec9d2881d5471e649302c"
+    },
+    "inputs": {
+      "source_workspace/maize_phen_dl/results/europe_climate_transfer_20261015/combined_refit/combined_observations.csv.gz": "5d201798fd677e23530d10da01b0797d737d1f43e4b1b99406a17d63d3012e8c",
+      "source_workspace/maize_phen_dl/results/europe_climate_transfer_20261015/combined_refit/weather_alias_index.csv.gz": "b7315506280981c027867a972dd8808b751be262c1e5af092699338cf931d8ff",
+      "source_workspace/maize_phen_dl/results/europe_climate_transfer_20261015/sampling/site_fold_memberships.csv": "33c558826847ed933295e1c90d9d89396dd8faaa26fefb62bfb411e7217e336e",
+      "source_workspace/maize_phen_dl/models/maize_clock.pt": "d539dd306c95907b3d202fc771be79de0a4cf627dcb24ba49af0b6a12e7735e9",
+      "source_workspace/data/maize_phen_model/models/maize_model.json": "3d060e1fd0a2e6bd2a0f271d9f3f304d5375bea4269332d162b9afd8a7ea5a13",
+      "source_workspace/maize_phen_dl/results/sowing_day_transfer_20261014/data/weather.npz": "7f6f1c81a35b902567aa0a16ea6b6077a75e01030bb420bde6a7373f8a8aa0e4",
+      "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/climate/site_annual_climate.csv": "30f00fed4155bfa12d371f9f811effc8544b30d60536fde33ff5810da4b08c93",
+      "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/common_inputs.npz": "56d5a2e7354c68324bfe1768f3b67b07caa21ed203a4b878ca28f9fdd57888da",
+      "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/common_units.csv.gz": "e93f27ca811afcccf58de7d5dd7a7946b18c6d46c40e8f742330d588df111400",
+      "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/common_qualification.json": "f94c054d79e96947b5f78873736f6503cc365348bda691d75901b7eb39688bae",
+      "source_workspace/maize_phen_dl/research/annual_temperature_transfer/weather_fit.py": "ec144658536b0f43a2e56faa5c7055d06b337becd976ffe8bb7d6543b6869d4c",
+      "source_workspace/maize_phen_dl/research/annual_temperature_transfer/weather_design.py": "b5e27fe2fd5e35553d8a81686882eba5863ed7e58e1b247c10e5010573242fbf",
+      "source_workspace/maize_phen_dl/research/annual_temperature_transfer/weather.py": "2ac4ab2892fd3d9074bae748a3d1a2b930fa6cb98db495c384bcd224116f4897",
+      "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/weather/paired_design/source_pools/fold0.csv.gz": "6d6fab81536e29815dd56c22f50526e4a880c12917e1d8c2680a5c44cdf7f444"
+    },
+    "design_sha256": "b24f0c55f929606c656643646e691b589c7c21729a6a7a707213def5395f88ad"
+  },
+  "source_labels": 937,
+  "inner_fit_labels": 635,
+  "inner_validation_labels": 302,
+  "source_mat_range_c": [
+    6.001334377728256,
+    10.241337717854208
+  ],
+  "source_mat_median_c": 9.12761625066373,
+  "selections": {
+    "alpha": {
+      "alpha": 0.25,
+      "mae": 9.03126107338689
+    },
+    "rf": {
+      "strength": 0.875,
+      "mae": 9.036182335178118
+    },
+    "mlp": {
+      "steps": 80,
+      "strength": 1.0,
+      "mae": 8.775756575319454
+    },
+    "transformer_updates": 120
+  },
+  "selection_trials": {
+    "nonlinear_T": [
+      {
+        "alpha": 0.015625,
+        "mae": 9.099996344937878
+      },
+      {
+        "alpha": 0.03125,
+        "mae": 9.071859390555378
+      },
+      {
+        "alpha": 0.0625,
+        "mae": 9.061343800258657
+      },
+      {
+        "alpha": 0.125,
+        "mae": 9.065340344846573
+      },
+      {
+        "alpha": 0.25,
+        "mae": 9.03126107338689
+      },
+      {
+        "alpha": 0.5,
+        "mae": 9.443813396565977
+      },
+      {
+        "alpha": 0.75,
+        "mae": 10.324437680252219
+      },
+      {
+        "alpha": 1.0,
+        "mae": 11.498711632968028
+      },
+      {
+        "alpha": 1.5,
+        "mae": 14.594809811486995
+      }
+    ],
+    "RF": [
+      {
+        "strength": 0.0,
+        "mae": 11.498711632968028
+      },
+      {
+        "strength": 0.125,
+        "mae": 10.940228499470667
+      },
+      {
+        "strength": 0.25,
+        "mae": 10.422780364941776
+      },
+      {
+        "strength": 0.375,
+        "mae": 9.943086495972423
+      },
+      {
+        "strength": 0.5,
+        "mae": 9.519651821798876
+      },
+      {
+        "strength": 0.625,
+        "mae": 9.206758679466668
+      },
+      {
+        "strength": 0.75,
+        "mae": 9.07572815780786
+      },
+      {
+        "strength": 0.875,
+        "mae": 9.036182335178118
+      },
+      {
+        "strength": 1.0,
+        "mae": 9.061472107334561
+      }
+    ],
+    "MLP": [
+      {
+        "steps": 80,
+        "strength": 0.0,
+        "mae": 11.498711632968028
+      },
+      {
+        "steps": 80,
+        "strength": 0.5,
+        "mae": 9.469547409710072
+      },
+      {
+        "steps": 80,
+        "strength": 1.0,
+        "mae": 8.775756575319454
+      },
+      {
+        "steps": 160,
+        "strength": 0.0,
+        "mae": 11.498711632968028
+      },
+      {
+        "steps": 160,
+        "strength": 0.5,
+        "mae": 9.527068610620026
+      },
+      {
+        "steps": 160,
+        "strength": 1.0,
+        "mae": 9.03801473393092
+      },
+      {
+        "steps": 320,
+        "strength": 0.0,
+        "mae": 11.498711632968028
+      },
+      {
+        "steps": 320,
+        "strength": 0.5,
+        "mae": 9.43017185055723
+      },
+      {
+        "steps": 320,
+        "strength": 1.0,
+        "mae": 9.254221018424706
+      }
+    ],
+    "thermal_transformer": [
+      {
+        "step": 0,
+        "mae": 11.498715744100393
+      },
+      {
+        "step": 40,
+        "mae": 9.421982350624514
+      },
+      {
+        "step": 80,
+        "mae": 9.018117808390366
+      },
+      {
+        "step": 120,
+        "mae": 9.007881515046856
+      },
+      {
+        "step": 160,
+        "mae": 9.077953927386147
+      },
+      {
+        "step": 200,
+        "mae": 9.493141848382766
+      },
+      {
+        "step": 240,
+        "mae": 9.214650316857481
+      },
+      {
+        "step": 280,
+        "mae": 9.236943001458219
+      },
+      {
+        "step": 320,
+        "mae": 9.553867943702516
+      }
+    ]
+  },
+  "teachers": {
+    "inner": [
+      {
+        "held_blocks": [
+          "WEATHER_GROUP_80_63",
+          "WEATHER_GROUP_84_59",
+          "WEATHER_GROUP_85_60",
+          "WEATHER_GROUP_85_69",
+          "WEATHER_GROUP_86_68",
+          "WEATHER_GROUP_89_65",
+          "WEATHER_GROUP_90_66"
+        ],
+        "fit_blocks": [
+          "WEATHER_GROUP_83_58",
+          "WEATHER_GROUP_85_56",
+          "WEATHER_GROUP_85_55",
+          "WEATHER_GROUP_90_54",
+          "WEATHER_GROUP_86_56",
+          "WEATHER_GROUP_89_64",
+          "WEATHER_GROUP_89_68",
+          "WEATHER_GROUP_91_62",
+          "WEATHER_GROUP_89_59",
+          "WEATHER_GROUP_82_60",
+          "WEATHER_GROUP_93_62",
+          "WEATHER_GROUP_85_66",
+          "WEATHER_GROUP_85_67",
+          "WEATHER_GROUP_86_62"
+        ],
+        "fit_units": 72,
+        "held_units": 36,
+        "support": [
+          72,
+          65,
+          68,
+          71,
+          63,
+          57,
+          53
+        ]
+      },
+      {
+        "held_blocks": [
+          "WEATHER_GROUP_82_60",
+          "WEATHER_GROUP_85_55",
+          "WEATHER_GROUP_85_66",
+          "WEATHER_GROUP_86_56",
+          "WEATHER_GROUP_89_59",
+          "WEATHER_GROUP_89_68",
+          "WEATHER_GROUP_91_62"
+        ],
+        "fit_blocks": [
+          "WEATHER_GROUP_83_58",
+          "WEATHER_GROUP_85_56",
+          "WEATHER_GROUP_90_54",
+          "WEATHER_GROUP_89_64",
+          "WEATHER_GROUP_89_65",
+          "WEATHER_GROUP_93_62",
+          "WEATHER_GROUP_85_69",
+          "WEATHER_GROUP_90_66",
+          "WEATHER_GROUP_86_68",
+          "WEATHER_GROUP_85_67",
+          "WEATHER_GROUP_80_63",
+          "WEATHER_GROUP_84_59",
+          "WEATHER_GROUP_86_62",
+          "WEATHER_GROUP_85_60"
+        ],
+        "fit_units": 64,
+        "held_units": 44,
+        "support": [
+          64,
+          53,
+          55,
+          60,
+          51,
+          38,
+          36
+        ]
+      },
+      {
+        "held_blocks": [
+          "WEATHER_GROUP_83_58",
+          "WEATHER_GROUP_85_56",
+          "WEATHER_GROUP_85_67",
+          "WEATHER_GROUP_86_62",
+          "WEATHER_GROUP_89_64",
+          "WEATHER_GROUP_90_54",
+          "WEATHER_GROUP_93_62"
+        ],
+        "fit_blocks": [
+          "WEATHER_GROUP_85_55",
+          "WEATHER_GROUP_86_56",
+          "WEATHER_GROUP_89_68",
+          "WEATHER_GROUP_89_65",
+          "WEATHER_GROUP_91_62",
+          "WEATHER_GROUP_89_59",
+          "WEATHER_GROUP_82_60",
+          "WEATHER_GROUP_85_69",
+          "WEATHER_GROUP_90_66",
+          "WEATHER_GROUP_86_68",
+          "WEATHER_GROUP_85_66",
+          "WEATHER_GROUP_80_63",
+          "WEATHER_GROUP_84_59",
+          "WEATHER_GROUP_85_60"
+        ],
+        "fit_units": 80,
+        "held_units": 28,
+        "support": [
+          80,
+          68,
+          69,
+          75,
+          70,
+          55,
+          47
+        ]
+      }
+    ],
+    "complete_source": [
+      {
+        "held_blocks": [
+          "WEATHER_GROUP_80_63",
+          "WEATHER_GROUP_83_56",
+          "WEATHER_GROUP_84_59",
+          "WEATHER_GROUP_85_55",
+          "WEATHER_GROUP_85_66",
+          "WEATHER_GROUP_86_56",
+          "WEATHER_GROUP_88_60",
+          "WEATHER_GROUP_89_64",
+          "WEATHER_GROUP_90_54",
+          "WEATHER_GROUP_91_63",
+          "WEATHER_GROUP_93_62"
+        ],
+        "fit_blocks": [
+          "WEATHER_GROUP_83_58",
+          "WEATHER_GROUP_85_56",
+          "WEATHER_GROUP_84_57",
+          "WEATHER_GROUP_82_58",
+          "WEATHER_GROUP_91_64",
+          "WEATHER_GROUP_89_68",
+          "WEATHER_GROUP_89_65",
+          "WEATHER_GROUP_88_66",
+          "WEATHER_GROUP_91_62",
+          "WEATHER_GROUP_89_59",
+          "WEATHER_GROUP_91_66",
+          "WEATHER_GROUP_82_60",
+          "WEATHER_GROUP_85_69",
+          "WEATHER_GROUP_90_66",
+          "WEATHER_GROUP_86_68",
+          "WEATHER_GROUP_85_67",
+          "WEATHER_GROUP_84_60",
+          "WEATHER_GROUP_86_62",
+          "WEATHER_GROUP_85_60",
+          "WEATHER_GROUP_84_61"
+        ],
+        "fit_units": 96,
+        "held_units": 64,
+        "support": [
+          96,
+          83,
+          81,
+          86,
+          81,
+          63,
+          53
+        ]
+      },
+      {
+        "held_blocks": [
+          "WEATHER_GROUP_82_58",
+          "WEATHER_GROUP_83_58",
+          "WEATHER_GROUP_84_60",
+          "WEATHER_GROUP_85_56",
+          "WEATHER_GROUP_85_67",
+          "WEATHER_GROUP_86_62",
+          "WEATHER_GROUP_88_66",
+          "WEATHER_GROUP_89_65",
+          "WEATHER_GROUP_90_66",
+          "WEATHER_GROUP_91_64"
+        ],
+        "fit_blocks": [
+          "WEATHER_GROUP_84_57",
+          "WEATHER_GROUP_83_56",
+          "WEATHER_GROUP_85_55",
+          "WEATHER_GROUP_90_54",
+          "WEATHER_GROUP_88_60",
+          "WEATHER_GROUP_86_56",
+          "WEATHER_GROUP_89_64",
+          "WEATHER_GROUP_91_63",
+          "WEATHER_GROUP_89_68",
+          "WEATHER_GROUP_91_62",
+          "WEATHER_GROUP_89_59",
+          "WEATHER_GROUP_91_66",
+          "WEATHER_GROUP_82_60",
+          "WEATHER_GROUP_93_62",
+          "WEATHER_GROUP_85_69",
+          "WEATHER_GROUP_86_68",
+          "WEATHER_GROUP_85_66",
+          "WEATHER_GROUP_80_63",
+          "WEATHER_GROUP_84_59",
+          "WEATHER_GROUP_85_60",
+          "WEATHER_GROUP_84_61"
+        ],
+        "fit_units": 120,
+        "held_units": 40,
+        "support": [
+          120,
+          104,
+          107,
+          115,
+          108,
+          95,
+          83
+        ]
+      },
+      {
+        "held_blocks": [
+          "WEATHER_GROUP_82_60",
+          "WEATHER_GROUP_84_57",
+          "WEATHER_GROUP_84_61",
+          "WEATHER_GROUP_85_60",
+          "WEATHER_GROUP_85_69",
+          "WEATHER_GROUP_86_68",
+          "WEATHER_GROUP_89_59",
+          "WEATHER_GROUP_89_68",
+          "WEATHER_GROUP_91_62",
+          "WEATHER_GROUP_91_66"
+        ],
+        "fit_blocks": [
+          "WEATHER_GROUP_83_58",
+          "WEATHER_GROUP_85_56",
+          "WEATHER_GROUP_83_56",
+          "WEATHER_GROUP_85_55",
+          "WEATHER_GROUP_90_54",
+          "WEATHER_GROUP_88_60",
+          "WEATHER_GROUP_86_56",
+          "WEATHER_GROUP_82_58",
+          "WEATHER_GROUP_89_64",
+          "WEATHER_GROUP_91_63",
+          "WEATHER_GROUP_91_64",
+          "WEATHER_GROUP_89_65",
+          "WEATHER_GROUP_88_66",
+          "WEATHER_GROUP_93_62",
+          "WEATHER_GROUP_90_66",
+          "WEATHER_GROUP_85_66",
+          "WEATHER_GROUP_85_67",
+          "WEATHER_GROUP_80_63",
+          "WEATHER_GROUP_84_59",
+          "WEATHER_GROUP_84_60",
+          "WEATHER_GROUP_86_62"
+        ],
+        "fit_units": 104,
+        "held_units": 56,
+        "support": [
+          104,
+          87,
+          90,
+          93,
+          87,
+          72,
+          66
+        ]
+      }
+    ]
+  },
+  "correction_support": {
+    "RF": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "MLP": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "support_geometry": {
+    "mean": [
+      14.510830521583557,
+      8.55250550508499
+    ],
+    "scale": [
+      0.8222120016087542,
+      0.6750959464368836
+    ],
+    "radius": 0.6731664395266507,
+    "source_sites": 40,
+    "source_leave_one_site_distances": [
+      0.6586828849654337,
+      0.061047729548126435,
+      0.04200486159503559,
+      0.0812993981611653,
+      2.970197645715989,
+      0.25857700356680546,
+      0.48502993451784243,
+      0.18654032809747859,
+      0.38241731281278585,
+      0.11494104451204883,
+      0.6586828849654337,
+      0.3529128824319765,
+      0.056710057187004635,
+      0.3523493523638076,
+      0.04200486159503559,
+      0.0971737087734879,
+      0.9483539761897891,
+      0.3529128824319765,
+      0.1194661138987179,
+      0.26574750012926457,
+      0.47118307901290224,
+      0.16078561476195832,
+      0.3523493523638076,
+      0.09265280973431608,
+      0.0971737087734879,
+      0.16148136769129096,
+      0.13696078626499678,
+      0.13696078626499678,
+      0.08952102177011614,
+      0.11494104451204883,
+      0.16148136769129096,
+      0.37894043226384877,
+      0.16078561476195832,
+      0.0812993981611653,
+      0.09265280973431608,
+      0.4699322782290257,
+      0.11977005369225235,
+      0.056710057187004635,
+      0.061047729548126435,
+      0.4614652840072607
+    ]
+  },
+  "elapsed_seconds": 8.331483166955877,
+  "outputs": {
+    "predictions.csv.gz": "c28bb7139849435322966cd6e3b08c7d90089a963d3cd5a856a9033fd84619de",
+    "thermal_transformer.pt": "e150c106b74336552365517484117c78a1596f216c3b09be1314a3b325403937",
+    "fits.pkl": "411c09c1cb673b788e5feb5b408929454170096c4de5790f667d7fda7a0cc1a1"
+  }
+}

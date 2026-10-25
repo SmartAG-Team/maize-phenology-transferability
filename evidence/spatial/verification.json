@@ -1,0 +1,50 @@
+{
+  "complete": true,
+  "input_sha256": {
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/site_zones.csv": "acf680f61846cd2ae12a23cbf27f7a50c5a712517fe4c2ce3a3206a8c765fce8",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/insights/benchmark_sites.csv.gz": "7b1c838ffe8f721f325ca5a431968d0325d037a96a46fd4447718185ad01d894",
+    "source_workspace/maize_phen_dl/results/phenology_exploration_20261023/year_matched/cases/f0_random_n80_d17/predictions.csv.gz": "92183563703d33113dcd39dfbfa32dad6f3f7cf2f27ccf2d01b9996950f0d265",
+    "source_workspace/maize_phen_dl/results/phenology_exploration_20261023/year_matched/cases/f1_random_n80_d17/predictions.csv.gz": "5e77ba4d7af36c4088a818466e88be536582b040db38f46746a8afbacacd20e9",
+    "source_workspace/maize_phen_dl/results/phenology_exploration_20261023/year_matched/cases/f2_random_n80_d17/predictions.csv.gz": "a3a38dc6925513bfc7ac9ad5cc2fda1d537ad77811576c38d8afd3f412b3864d",
+    "source_workspace/maize_phen_dl/results/phenology_exploration_20261023/year_matched/cases/f3_random_n80_d17/predictions.csv.gz": "15ebd41171f3187d362fc365f33a26d8247985eee92bed9dfab6aa072f420dc9",
+    "source_workspace/maize_phen_dl/results/phenology_exploration_20261023/year_matched/cases/f4_random_n80_d17/predictions.csv.gz": "df172a120fb35e92b9e4251fa41c4a5db868b0f52543264da3db88f3ad006371",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/site_transfer_errors.csv.gz": "300d35b303afec2e27b8be1a89c708e8edc590d2aa6621dc04cc17118dfd6c1c",
+    "source_workspace/maize_phen_dl/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.VERSION.txt": "548358969090d629b41888f5fe664ac31b7203dfd849f7c1ef820ac055b62191",
+    "source_workspace/maize_phen_dl/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.prj": "98aaf3d1c0ecadf1a424a4536de261c3daf4e373697cb86c40c43b989daf52eb",
+    "source_workspace/maize_phen_dl/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.README.html": "28dbb5a402d8f4f752ae338b819a3fd3cc60b26752fae16e764de19189e9c995",
+    "source_workspace/maize_phen_dl/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.dbf": "4ec70fc63842df719ee1f9f7bb0469b528b1eab8099c44aea6c7339a10cacc4b",
+    "source_workspace/maize_phen_dl/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.shp": "94799b91827fb9f32c0c517d60281572abcf5e4647d19b7f52217071cc4fd30d",
+    "source_workspace/maize_phen_dl/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.cpg": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+    "source_workspace/maize_phen_dl/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.shx": "1813a4b55c3e9db05b7f5f77adbfe7b8f8ad5bce870dab0f4e5ec937f0e5a791",
+    "source_workspace/maize_phen_dl/research/unified_transfer/assets/naturalearth/NOTICE.md": "7f57a3e771690980ebc8d94c56f986abbe86df5888d1fe5386da1a1102df5ca6"
+  },
+  "code_sha256": "dd6c6dd6ccd2a54b75141519cefd49a8f9cdaa3c67ff30e5bf9374b3c9f33b3b",
+  "projection": "EPSG:3035",
+  "coordinate_basis": "recorded native weather-cell centres",
+  "cell_aggregation": "equal monitoring sites after native-year averaging; head61/87 separate; three source draws already averaged",
+  "interpolation": false,
+  "paired_model_support": true,
+  "transfer_diagonal_reconstructed": true,
+  "display_limits_days": {
+    "mae": [
+      0,
+      30
+    ],
+    "pooled_model_difference": [
+      -10,
+      10
+    ],
+    "transfer_penalty": [
+      -30,
+      30
+    ]
+  },
+  "interpretation": "descriptive geographic distributions at sampled cells; no significant spatial cluster or causal climate claim",
+  "output_sha256": {
+    "pooled_cells.csv": "929837f51ce1aa155d917bda3ef0634dd1bb1a945d547362f662a6cdc1bb1108",
+    "pooled_map.csv": "a62d52c28f1379eb03e6f17fffc9a74e7f7689e43c2d2b2f5e3515b020f040d4",
+    "transfer_cells.csv": "f6f049cad1fff6095c80e7025d40cf1c97b228eb0192f1c8a2d4057fa29730ef",
+    "transfer_map.csv": "2b7643571d5842020880d22ea18eb442702dbef4fdc2f37db77a5e6ea8dc78b3",
+    "summary.csv": "1dc8b5d79d6f58e7f697f496acb2d1df3637a10825da5307ea131ceb9b7ef883"
+  }
+}

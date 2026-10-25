@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+.DS_Store
+__MACOSX/
+.cache/
+outputs/
+results/
+data/study_dataset/
+study_dataset_manifest.json
+evidence/site_transfer_errors.csv.gz
+*credentials*
+*token*

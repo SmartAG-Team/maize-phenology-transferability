@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-24",
+  "geometry": "1981\u20132010 complete annual mean temperature; exact-date-site quintiles, unsplit ties",
+  "zone_edges_c": [
+    8.424171154907487,
+    8.917869441368586,
+    9.257499219636468,
+    9.608169339384956
+  ],
+  "zones": 5,
+  "sites_per_fit": 40,
+  "distinct_years_per_site": 8,
+  "source_draws": [
+    17,
+    29,
+    43
+  ],
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "source_zones": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    -1
+  ],
+  "pooled_control": "random sites across all qualified annual zones; same 40-site/eight-year budget",
+  "models": [
+    "T",
+    "nonlinear_T",
+    "residual_RF",
+    "residual_MLP",
+    "thermal_transformer",
+    "support_blend"
+  ],
+  "model_selection": "best-performing families from previous retrospective exploration; no prospective selection claim",
+  "model_inputs": "unchanged original native weather and Apr\u2013Sep/sowing context; annual MAT defines source/target zones",
+  "neural_optimizer_seed": 17,
+  "minimum_head_support": 30,
+  "source_end": 2010,
+  "primary_evaluation": [
+    2011,
+    2025
+  ],
+  "protected_inputs": {
+    "source_workspace/maize_phen_dl/results/europe_climate_transfer_20261015/combined_refit/combined_observations.csv.gz": "5d201798fd677e23530d10da01b0797d737d1f43e4b1b99406a17d63d3012e8c",
+    "source_workspace/maize_phen_dl/results/europe_climate_transfer_20261015/combined_refit/weather_alias_index.csv.gz": "b7315506280981c027867a972dd8808b751be262c1e5af092699338cf931d8ff",
+    "source_workspace/maize_phen_dl/results/europe_climate_transfer_20261015/sampling/site_fold_memberships.csv": "33c558826847ed933295e1c90d9d89396dd8faaa26fefb62bfb411e7217e336e",
+    "source_workspace/maize_phen_dl/models/maize_clock.pt": "d539dd306c95907b3d202fc771be79de0a4cf627dcb24ba49af0b6a12e7735e9",
+    "source_workspace/data/maize_phen_model/models/maize_model.json": "3d060e1fd0a2e6bd2a0f271d9f3f304d5375bea4269332d162b9afd8a7ea5a13",
+    "source_workspace/maize_phen_dl/results/sowing_day_transfer_20261014/data/weather.npz": "7f6f1c81a35b902567aa0a16ea6b6077a75e01030bb420bde6a7373f8a8aa0e4",
+    "source_workspace/maize_phen_dl/results/annual_temperature_transfer_20261024/climate/site_annual_climate.csv": "30f00fed4155bfa12d371f9f811effc8544b30d60536fde33ff5810da4b08c93"
+  }
+}

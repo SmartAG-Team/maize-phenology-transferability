@@ -1,0 +1,38 @@
+{
+  "target": "evidence/site_transfer_errors.csv.gz",
+  "bytes": 168010223,
+  "sha256": "300d35b303afec2e27b8be1a89c708e8edc590d2aa6621dc04cc17118dfd6c1c",
+  "format": "ordered binary chunks of the original gzip; no reserialization",
+  "parts": [
+    {
+      "path": "evidence/climate_transfer_parts/site_transfer_errors.csv.gz.part01",
+      "bytes": 33554432,
+      "sha256": "bd1460c9d745e48d5af4304879c3377202f5ed9fd1a7df4c6256f5236c7c46a8"
+    },
+    {
+      "path": "evidence/climate_transfer_parts/site_transfer_errors.csv.gz.part02",
+      "bytes": 33554432,
+      "sha256": "b85ab6272b4a73c1a380da8851b452f24037cc813392f0b2f7449c8931e37e79"
+    },
+    {
+      "path": "evidence/climate_transfer_parts/site_transfer_errors.csv.gz.part03",
+      "bytes": 33554432,
+      "sha256": "49d8291563cf43234621498718aeb7096fc3d7c8bd2d845a4d43f63afe1b97c1"
+    },
+    {
+      "path": "evidence/climate_transfer_parts/site_transfer_errors.csv.gz.part04",
+      "bytes": 33554432,
+      "sha256": "e57238c2fb536bd27125003cf3f600f2d76b5a3e5b24542b8ff3cf6c2b8bbe86"
+    },
+    {
+      "path": "evidence/climate_transfer_parts/site_transfer_errors.csv.gz.part05",
+      "bytes": 33554432,
+      "sha256": "a603c3f96b60fb860531ec38e38b5f7ba8669045f715269145edb78d74255921"
+    },
+    {
+      "path": "evidence/climate_transfer_parts/site_transfer_errors.csv.gz.part06",
+      "bytes": 238063,
+      "sha256": "a4ebb24c3d05826aff35f1e323e85761ec1aae5cdf6707a8f72b8d878fbd2f1d"
+    }
+  ]
+}

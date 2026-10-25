@@ -1,0 +1,11 @@
+{
+  "complete": true,
+  "benchmark_score_and_interval_checks": 156,
+  "benefit_harm_checks": 10,
+  "local_native_checks": 938829,
+  "max_manual_thermal_difference_days": 2.39541358837414e-05,
+  "max_benchmark_difference_days": 3.552713678800501e-15,
+  "historical_weather_prefix_verified": true,
+  "no_later_labels_used_for_local_update": true,
+  "identical_local_targets": true
+}
