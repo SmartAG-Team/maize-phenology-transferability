@@ -4,6 +4,8 @@ Data and scientific code supporting **Predictive skill and environmental transfe
 
 The comparisons use source-qualified German maize event dates. They assess linear and nonlinear thermal-time references, residual RF/MLP, a causal thermal Transformer, source-support blending, local historical updating, annual-temperature transfer and DWD versus ERA5-Land forcing. Native BBCH 87 remains distinct from harvest or generic physiological maturity. Supplied-weather retrospective skill is not operational forecast skill.
 
+Version **v1.0.1** adds a head-balanced violin distribution to Figure 5, paired from zero to five historical local years. Full model inputs and fitted results retain the checked **v1.0.0** data assets.
+
 ## Quick reproduction
 
 Python 3.12 and the pinned dependencies are recorded in `requirements.txt`. From the repository root:
@@ -63,3 +65,12 @@ Invalid event dates incur 366 days loss; weighting follows observations within s
 Source data retain their own licences; no blanket project-wide software licence is inferred. No access credentials are included or required for offline reproduction.
 
 Optional Earth Engine reacquisition requires the user’s own authorized credentials and project; set `PHENOLOGY_EE_PROJECT` to that project. The original acquisition project is recorded as provenance, and all required offline inputs are already supplied.
+
+To reproduce the revised local-history figure alone:
+
+```sh
+.venv/bin/python scripts/render_figures.py --figure fig5
+.venv/bin/python scripts/verify_figure5.py
+```
+
+Figure 5 retains the accuracy curve and adds all 5,323 matched site–endpoint gains per model, with equal endpoint weights, weighted medians and the original mean/block intervals. Its signed asinh axis retains every tail and expands the centre; density estimation uses untransformed days. Exact pairs, density curves, summaries and intervals are in `plot_data/fig5.xlsx`.

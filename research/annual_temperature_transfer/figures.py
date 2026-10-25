@@ -189,22 +189,51 @@ def stage_and_corrections():
 
 
 def local_calibration():
+    from .violin import local_gain_distribution
+    from matplotlib.lines import Line2D
     folder=OUT/'insights';f=pd.read_csv(folder/'local_summary.csv')
-    names=['T','nonlinear_T','residual_RF','residual_MLP','thermal_transformer'];f=f[f.model.isin(names)].copy()
-    fig,ax=plt.subplots(figsize=(19/2.54,10/2.54))
+    names=['T','nonlinear_T','residual_RF','residual_MLP','thermal_transformer'];f=f[f.model.isin(names)].copy();f['panel']='(a)'
+    contrasts=pd.read_csv(folder/'local_contrasts.csv')
+    paired,summary,densities=local_gain_distribution(pd.read_csv(folder/'local_sites.csv.gz'),contrasts,names)
+    fig,axes=plt.subplots(2,1,figsize=(19/2.54,16.5/2.54),gridspec_kw={'height_ratios':[1,1.12]})
+    fig.subplots_adjust(left=.20,right=.98,bottom=.10,top=.87,hspace=.58)
+    ax=axes[0]
     for model in names:
         q=f[f.model.eq(model)].sort_values('budget')
         ax.plot(q.budget,q.mae,'-o',color=COLORS[model],label=LABELS[model],markersize=5)
         ax.fill_between(q.budget,q.ci_low,q.ci_high,color=COLORS[model],alpha=.1,linewidth=0)
-    ax.set_xticks([0,1,3,5]);ax.set_xlabel('Historical local years supplied (ending by 2010)');ax.set_ylabel('Penalised MAE (days)')
-    ax.grid(axis='y',color='.92',linewidth=.6);ax.legend(loc='upper center',bbox_to_anchor=(.5,1.3),ncol=3,frameon=False)
-    caption=('Fig. 5. Accuracy after supplying a limited history at previously held locations. '
-        'Budgets of 0, 1, 3 and 5 select the latest available native site-years ending by 2010; the 2011–2025 evaluation population remains identical across budgets and models: 49,462 labels at 822 sites. '
-        'Every native head uses a median of yearly mean date residuals, shrunk by n/(n+kappa), where n counts available head-years and kappa is the same source-derived value used by all displayed date-offset models. '
-        'Missing native heads receive no update. Nonlinear-T history predictions are recomputed with actual weather prefixes ending by 2010. '
-        'Source fits use the frozen 80-site coverage design, eight years/site and source draw 17 in five spatial folds. '
-        'Shading shows 95% target-block intervals conditional on fitted models. This adapted-site cohort is smaller than the zero-shot network benchmark; its absolute errors are not a comparison of weather products or an estimate of operational forecast skill.')
-    save(fig,'fig5',{'plotted_data':f,'paired_contrasts':pd.read_csv(folder/'local_contrasts.csv')},caption)
+    ax.set_xticks([0,1,3,5]);ax.set_xlabel('Historical local years (ending by 2010)');ax.set_ylabel('Penalised MAE (days)')
+    ax.grid(axis='y',color='.92',linewidth=.6);panel(ax,'(a)')
+    handles,labels=ax.get_legend_handles_labels()
+    fig.legend(handles,labels,loc='upper center',bbox_to_anchor=(.5,1.005),ncol=3,frameon=False)
+    ax=axes[1]
+    for i,model in enumerate(names):
+        q=densities[densities.model.eq(model)];r=summary[summary.model.eq(model)].iloc[0]
+        ax.fill_between(q.gain_days,i-q.displayed_halfwidth,i+q.displayed_halfwidth,
+            color=COLORS[model],alpha=.36,edgecolor=COLORS[model],linewidth=.75)
+        ax.errorbar(r.mean_gain_days,i-.10,
+            xerr=[[r.mean_gain_days-r.ci_low_days],[r.ci_high_days-r.mean_gain_days]],
+            fmt='o',color='#222222',markersize=4,capsize=3,linewidth=1.1,zorder=4)
+        ax.plot(r.weighted_median_days,i+.10,'D',markerfacecolor='white',markeredgecolor='#222222',markersize=4,zorder=4)
+    ax.set_yticks(range(len(names)),['T','Nonlinear T','RF','MLP','Thermal\nTransformer'])
+    ax.set_ylim(len(names)-.45,-.55);ax.set_xscale('asinh',linear_width=2)
+    ax.set_xlim(-40,70);ax.set_xticks([-30,-10,-3,0,3,10,30,60],['−30','−10','−3','0','3','10','30','60'])
+    ax.set_xlabel('MAE reduction with 5 local years (days; asinh scale)')
+    ax.axvline(0,color='.45',linestyle='--',linewidth=.8,zorder=0);ax.grid(axis='x',color='.93',linewidth=.6);ax.set_axisbelow(True);panel(ax,'(b)')
+    ax.legend(handles=[Line2D([],[],color='#222222',marker='o',markersize=4,label='Mean and 95% CI'),
+        Line2D([],[],color='none',marker='D',markerfacecolor='white',markeredgecolor='#222222',markersize=4,label='Median')],
+        loc='lower right',frameon=False,bbox_to_anchor=(1.,1.02),ncol=2,handlelength=1.4,columnspacing=1.)
+    caption=('Fig. 5. Accuracy and distributions of gains from historical local observations. '
+        '(a) MAE at 0, 1, 3 and 5 pre-2011 local years; shading gives 95% target-block intervals. '
+        '(b) Violin distributions of paired MAE reduction from zero to five historical years; positive values indicate improvement. '
+        'Each model uses 5,323 matched site–endpoint pairs at 822 sites. Density weights are equal across seven native endpoints, then across sites within each endpoint. '
+        'Gaussian kernels use Scott bandwidth in untransformed days, equal maximum widths and the full observed ranges. '
+        'The signed asinh horizontal scale (2-day linear width) expands the centre while retaining all tails; ticks remain in days. '
+        'Black circles/whiskers show equal-head mean reductions and 95% target-block intervals; white diamonds show weighted medians. '
+        'All models share 2011–2025 targets, source-derived shrinkage and historical-year budgets; missing heads receive no update. '
+        'Five spatial folds use 80 coverage-selected source sites, eight years/site and draw 17. Intervals condition on fitted models; densities do not imply independent site–endpoint replicates.')
+    save(fig,'fig5',{'plotted_data':pd.concat([f,paired],ignore_index=True),'accuracy_curve':f,
+        'paired_gains':paired,'distribution_summary':summary,'density_curves':densities,'paired_contrasts':contrasts},caption,layout=False)
 
 
 def run():

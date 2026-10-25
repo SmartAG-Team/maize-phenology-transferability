@@ -89,9 +89,10 @@
     },
     {
       "path": "research/annual_temperature_transfer/figures.py",
-      "source_sha256": "a544a3ad1224f7e48e4cd86bdce2ff355802a9af452d9d8bfcf8abbcc74d725d",
-      "released_sha256": "a544a3ad1224f7e48e4cd86bdce2ff355802a9af452d9d8bfcf8abbcc74d725d",
-      "change": "none"
+      "source_sha256": "b8a7133aa4864eb0d620abe935d1ec4cb7facdf7c4995aec5b0a07668179dde4",
+      "released_sha256": "b8a7133aa4864eb0d620abe935d1ec4cb7facdf7c4995aec5b0a07668179dde4",
+      "change": "v1.0.1 Figure5 violin presentation and exact plotting data; fitting algorithms unchanged",
+      "previous_released_sha256": "a544a3ad1224f7e48e4cd86bdce2ff355802a9af452d9d8bfcf8abbcc74d725d"
     },
     {
       "path": "research/annual_temperature_transfer/fit.py",
@@ -422,8 +423,16 @@
       "source_sha256": "00dd16a2739423b9c33f6630445bf464444b46d8325cf5753280189bb44b9e7c",
       "released_sha256": "00dd16a2739423b9c33f6630445bf464444b46d8325cf5753280189bb44b9e7c",
       "change": "none"
+    },
+    {
+      "path": "research/annual_temperature_transfer/violin.py",
+      "source_sha256": "75df0d3e77ed7b0fc47d2081a84b4e306629d57ce8e566b46cce9a8ed65a4e1b",
+      "released_sha256": "75df0d3e77ed7b0fc47d2081a84b4e306629d57ce8e566b46cce9a8ed65a4e1b",
+      "change": "new descriptive visualization helper for paired frozen outputs"
     }
   ],
   "full_data_delivery": "Complete model-ready study dataset and all supporting fitted-result files in three versioned GitHub Release assets; provider raw products and unrelated datasets retain the scope described in README.md.",
-  "full_model_ready_study_dataset_included": true
+  "full_model_ready_study_dataset_included": true,
+  "figure_code_version": "1.0.1",
+  "figure5_revision": "Paired local-history violin distributions; frozen inputs, models, accuracy curves and intervals retained."
 }
