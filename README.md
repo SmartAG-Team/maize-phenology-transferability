@@ -74,3 +74,7 @@ To reproduce the revised local-history figure alone:
 ```
 
 Figure 5 retains the accuracy curve and adds all 5,323 matched site–endpoint gains per model, with equal endpoint weights, weighted medians and the original mean/block intervals. Its signed asinh axis retains every tail and expands the centre; density estimation uses untransformed days. Exact pairs, density curves, summaries and intervals are in `plot_data/fig5.xlsx`.
+
+## Reproduction boundary
+
+Version **v1.0.2** clarifies the boundary between offline numerical reproduction and source reacquisition. All reported model comparisons and figures can be reconstructed offline from the supplied qualified inputs, saved fits and keyed predictions. The reference climatology is supplied as frozen Earth Engine aggregates, calendar-completeness receipts and site assignments; the complete 1981–2010 daily ERA5-Land reference-grid series is not locally archived. Recomputing that source aggregation requires authorized access to the specified provider collection and a fresh output directory, preserving the original receipt guards. Source products retain their own versions and day conventions. Full model retraining and live weather reacquisition are separate operations from replaying frozen results.

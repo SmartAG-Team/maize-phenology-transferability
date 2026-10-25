@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "files": [
     {
       "path": ".gitignore",
@@ -9,7 +9,7 @@
     {
       "path": "CITATION.cff",
       "bytes": 422,
-      "sha256": "20618d61ae3f56e380844127c90b4353fd25e7308376ea0ab024bd01c370d114"
+      "sha256": "82fc7c0b23d4419063fbee755620c7e5f6cb066f2997f6036b3423a1c54b3ac4"
     },
     {
       "path": "DATA_SOURCES.md",
@@ -18,13 +18,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 7733,
-      "sha256": "2a9e1094463f2f8f8c7f938a973eb8c0a520c5ce9990b4ef5ce3593ad53de102"
+      "bytes": 8564,
+      "sha256": "fc7f00cfeb39f1e620c87486a4b847d04de44098256f34dd85851bf1a06ee2e7"
     },
     {
       "path": "SOURCE_PROVENANCE.json",
-      "bytes": 21601,
-      "sha256": "0b2b3a7720b3e2ea007b8c10b677c487ce3e1706d9f47d9bfc709333a8d906b4"
+      "bytes": 22137,
+      "sha256": "d5d056505cfc8dbbf159ed5f7965b1f56bcc66613dd3353d6f4b383ed57abf47"
     },
     {
       "path": "evidence/analysis_verification.json",

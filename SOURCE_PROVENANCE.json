@@ -434,5 +434,12 @@
   "full_data_delivery": "Complete model-ready study dataset and all supporting fitted-result files in three versioned GitHub Release assets; provider raw products and unrelated datasets retain the scope described in README.md.",
   "full_model_ready_study_dataset_included": true,
   "figure_code_version": "1.0.1",
-  "figure5_revision": "Paired local-history violin distributions; frozen inputs, models, accuracy curves and intervals retained."
+  "figure5_revision": "Paired local-history violin distributions; frozen inputs, models, accuracy curves and intervals retained.",
+  "original_acquisition_archive_scope": {
+    "included_in_full": false,
+    "complete_model_ready_study_inputs_included": true,
+    "reference_climate": "Frozen reference aggregates, calendar-completeness receipts and site assignments are supplied. The full 1981\u20132010 daily reference-grid series is not locally archived; its reaggregation requires authorized provider access.",
+    "unrelated_collections": "Other countries and unused acquired collections are outside this study release."
+  },
+  "documentation_version": "1.0.2"
 }
