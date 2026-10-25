@@ -87,3 +87,7 @@ Version **v1.0.3** improves Figure 1 with shared inputs and calibration controls
 .venv/bin/python scripts/render_figures.py --figure fig1
 .venv/bin/python scripts/verify_workflow.py
 ```
+
+## Figure title policy
+
+Figures have no standalone titles. Descriptive titles belong in captions. Axis labels, legends, panel letters and labels inside workflow nodes retain their explanatory roles. The renderer rejects figure and axes titles; the workflow verifier rejects standalone text outside diagram nodes.

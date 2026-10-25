@@ -89,10 +89,10 @@
     },
     {
       "path": "research/annual_temperature_transfer/figures.py",
-      "source_sha256": "b8a7133aa4864eb0d620abe935d1ec4cb7facdf7c4995aec5b0a07668179dde4",
-      "released_sha256": "b8a7133aa4864eb0d620abe935d1ec4cb7facdf7c4995aec5b0a07668179dde4",
-      "change": "v1.0.1 Figure5 violin presentation and exact plotting data; fitting algorithms unchanged",
-      "previous_released_sha256": "a544a3ad1224f7e48e4cd86bdce2ff355802a9af452d9d8bfcf8abbcc74d725d"
+      "source_sha256": "93599783706983ee286e30586f901def2e3c230708480c65953e0f401a73c97c",
+      "released_sha256": "93599783706983ee286e30586f901def2e3c230708480c65953e0f401a73c97c",
+      "change": "v1.0.4 removes standalone titles and enforces caption-only titles; scientific fitting unchanged",
+      "previous_released_sha256": "b8a7133aa4864eb0d620abe935d1ec4cb7facdf7c4995aec5b0a07668179dde4"
     },
     {
       "path": "research/annual_temperature_transfer/fit.py",
@@ -162,10 +162,10 @@
     },
     {
       "path": "research/annual_temperature_transfer/workflow.py",
-      "source_sha256": "aa7933a20212936818b85c4e141dd397caccc45576ffa45030a458ac8b8b3428",
-      "released_sha256": "aa7933a20212936818b85c4e141dd397caccc45576ffa45030a458ac8b8b3428",
-      "change": "v1.0.3 conceptual workflow layout and explicit diagram-coordinate data; scientific fitting unchanged",
-      "previous_released_sha256": "96dcd5cdb25b8e98609e62b63f7de98b2666e6a6f3578564b207545d637f223e"
+      "source_sha256": "bd48c2a3c98146f9be2a492fd1e22943c48976336f6afa2b574f4bec2e6155f9",
+      "released_sha256": "bd48c2a3c98146f9be2a492fd1e22943c48976336f6afa2b574f4bec2e6155f9",
+      "change": "v1.0.4 removes standalone titles and enforces caption-only titles; scientific fitting unchanged",
+      "previous_released_sha256": "aa7933a20212936818b85c4e141dd397caccc45576ffa45030a458ac8b8b3428"
     },
     {
       "path": "research/environment_sowing_transfer/evaluate_foreign.py",
@@ -434,7 +434,7 @@
   ],
   "full_data_delivery": "Complete model-ready study dataset and all supporting fitted-result files in three versioned GitHub Release assets; provider raw products and unrelated datasets retain the scope described in README.md.",
   "full_model_ready_study_dataset_included": true,
-  "figure_code_version": "1.0.3",
+  "figure_code_version": "1.0.4",
   "figure5_revision": "Paired local-history violin distributions; frozen inputs, models, accuracy curves and intervals retained.",
   "original_acquisition_archive_scope": {
     "included_in_full": false,
@@ -443,5 +443,6 @@
     "unrelated_collections": "Other countries and unused acquired collections are outside this study release."
   },
   "documentation_version": "1.0.2",
-  "figure1_revision": "Question-led workflow, shared input/calibration foundation, model palette and four parallel comparison cards."
+  "figure1_revision": "Question-led workflow, shared input/calibration foundation, model palette and four parallel comparison cards.",
+  "figure_title_policy": "Standalone titles omitted; descriptions retained in captions."
 }

@@ -14,6 +14,8 @@ def main():
     labels=pd.read_excel(folder/'fig1.xlsx','labels').fillna('')
     encodings=pd.read_excel(folder/'fig1.xlsx','encodings')
     assert nodes.node.is_unique and labels.within_container.all()
+    assert labels.container_node.ne('').all(),'Standalone title or heading outside workflow nodes'
+    assert not labels.label.eq('question').any()
     assert set(nodes[nodes.kind.eq('parallel comparison')].panel)=={'(a)','(b)','(c)','(d)'}
     from research.annual_temperature_transfer.figures import COLORS
     assert dict(zip(encodings.model,encodings.color))==COLORS
@@ -50,7 +52,7 @@ def main():
     result=dict(complete=True,figure='fig1',conceptual_nodes=len(nodes),directed_edges=len(edges),text_items=len(labels),
         parallel_comparisons=4,model_formulations=6,graph_acyclic=True,all_shared_inputs_reach_evaluation=True,
         text_fits_cards=True,connectors_avoid_unrelated_cards=True,model_palette_matches_results=True,
-        width_cm=19,font_pt=12,dpi=600,coordinate_basis='conceptual layout units; not measurements',no_model_refitting=True)
+        standalone_title=False,width_cm=19,font_pt=12,dpi=600,coordinate_basis='conceptual layout units; not measurements',no_model_refitting=True)
     out=ROOT/'outputs/workflow_verification.json';out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))
 
 if __name__=='__main__':main()

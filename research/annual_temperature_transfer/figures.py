@@ -22,6 +22,10 @@ def panel(ax,text):ax.text(0,1.025,text,transform=ax.transAxes,ha='left',va='bot
 
 
 def save(fig,stem,tables,caption,layout=True):
+    if getattr(fig,'_suptitle',None) is not None and fig._suptitle.get_text().strip():
+        raise ValueError('Figure titles belong in captions: '+stem)
+    if any(ax.get_title(loc=loc).strip() for ax in fig.axes for loc in ['left','center','right']):
+        raise ValueError('Panel titles are not permitted: '+stem)
     FIG.mkdir(parents=True,exist_ok=True);width=19/2.54;pad=.025
     for _ in range(12):
         if layout:fig.tight_layout(pad=.5)

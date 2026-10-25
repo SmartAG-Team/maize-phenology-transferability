@@ -18,8 +18,8 @@ CAPTION=('Fig. 1. Workflow for evaluating phenology transferability. '
 
 
 def draw(save):
-    fig=plt.figure(figsize=(19/2.54,18.5/2.54))
-    ax=fig.add_axes([0,0,1,1]);ax.set(xlim=(0,19),ylim=(0,19));ax.axis('off')
+    fig=plt.figure(figsize=(19/2.54,(18.5/19*17.25)/2.54))
+    ax=fig.add_axes([0,0,1,1]);ax.set(xlim=(0,19),ylim=(.2,17.45));ax.axis('off')
     ink='#223B4A';line='#81929D';nodes=[];edges=[];labels=[];containers=[]
     def text(key,x,y,label,ha='left',bold=False,container=None,**kw):
         item=ax.text(x,y,label,ha=ha,va='center',fontsize=12,fontweight='bold' if bold else 'normal',
@@ -43,7 +43,6 @@ def draw(save):
             color=line,linewidth=.85,shrinkA=0,shrinkB=0,zorder=1))
         else:ax.plot([start[0],end[0]],[start[1],end[1]],color=line,linewidth=.85,zorder=1)
 
-    text('question',9.5,18.25,'How do model structure and input information\njointly influence phenology transferability?',ha='center',bold=True)
     left,right,width=.4,9.9,8.7
     data=box('qualified_data',left,14.4,width,2.85)
     text('data_heading',left+.4,16.73,'Data and provenance',bold=True,container=data)
