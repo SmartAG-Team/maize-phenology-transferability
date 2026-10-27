@@ -1,0 +1,1029 @@
+{
+  "source_public_version": "v1.0.4",
+  "changes": "Original fitting estimators and saved models preserved. Added valid-date ordinary MAE/signed-bias evaluation and common-valid paired comparisons, complete plotting data, Germany-only framed maps, concise manuscript methods, continuous Word/PDF line numbers and PNG-only 300-dpi figures.",
+  "files": [
+    {
+      "path": "code/author_affiliations.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "9dbed461b073fa7b17b0ab436fd782e444c608e2b9fabb3e96355a63c48051dc"
+    },
+    {
+      "path": "code/build_manuscript.py",
+      "source": "Local authorized abstract revision,2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "1f3d707ea287382c04da5a89efb35f337ccc3dae0b4a7cb42ab3c448cdb04fad",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "code/maize_clock/__init__.py",
+      "source": "public v1.0.4/maize_clock/__init__.py",
+      "source_sha256": "012d2a1bc6a01ba09cb22adfd8bc1ee16b4634babab2e4f904cfc7af6d6fa109",
+      "copied_sha256": "012d2a1bc6a01ba09cb22adfd8bc1ee16b4634babab2e4f904cfc7af6d6fa109",
+      "path_adapted": false
+    },
+    {
+      "path": "code/maize_clock/core.py",
+      "source": "public v1.0.4/maize_clock/core.py",
+      "source_sha256": "287f9728b2696f65b531e04547134085bf7dc6fb27a43a4a259169684b10476d",
+      "copied_sha256": "287f9728b2696f65b531e04547134085bf7dc6fb27a43a4a259169684b10476d",
+      "path_adapted": false
+    },
+    {
+      "path": "code/maize_clock/experiment.py",
+      "source": "public v1.0.4/maize_clock/experiment.py",
+      "source_sha256": "b1097ff7b0c412960d07c3091c000f4b8e66624c32f785168631fb5d8029dfc2",
+      "copied_sha256": "b1097ff7b0c412960d07c3091c000f4b8e66624c32f785168631fb5d8029dfc2",
+      "path_adapted": false
+    },
+    {
+      "path": "code/maize_clock/extension_boosting.py",
+      "source": "public v1.0.4/maize_clock/extension_boosting.py",
+      "source_sha256": "05de6785a415ab6950fa30f3c96a0ce6a81474ea7604bf770c79749ddc292b4e",
+      "copied_sha256": "05de6785a415ab6950fa30f3c96a0ce6a81474ea7604bf770c79749ddc292b4e",
+      "path_adapted": false
+    },
+    {
+      "path": "code/maize_clock/extension_regions.py",
+      "source": "public v1.0.4/maize_clock/extension_regions.py",
+      "source_sha256": "fd57ec185c5f656f8e4eb6b3d4357ec705239507a188148eef97aa1cf955e2c3",
+      "copied_sha256": "fd57ec185c5f656f8e4eb6b3d4357ec705239507a188148eef97aa1cf955e2c3",
+      "path_adapted": false
+    },
+    {
+      "path": "code/maize_clock/extensions.py",
+      "source": "public v1.0.4/maize_clock/extensions.py",
+      "source_sha256": "48ef301cb14a8666ce166953eca42a7ce4abc6d7067841532bbf0794cc7b81de",
+      "copied_sha256": "48ef301cb14a8666ce166953eca42a7ce4abc6d7067841532bbf0794cc7b81de",
+      "path_adapted": false
+    },
+    {
+      "path": "code/maize_clock/model.py",
+      "source": "public v1.0.4/maize_clock/model.py",
+      "source_sha256": "7cd5f22b542ddbf5bca9c4bdcacf8598c2359375086492039bc32a998300a0bc",
+      "copied_sha256": "7cd5f22b542ddbf5bca9c4bdcacf8598c2359375086492039bc32a998300a0bc",
+      "path_adapted": false
+    },
+    {
+      "path": "code/maize_clock/ordered_process.py",
+      "source": "public v1.0.4/maize_clock/ordered_process.py",
+      "source_sha256": "a18b99261be5a133d821e91f2d13e0cd5547ccb7ec3d7ba7c2ad821d4b863e73",
+      "copied_sha256": "a18b99261be5a133d821e91f2d13e0cd5547ccb7ec3d7ba7c2ad821d4b863e73",
+      "path_adapted": false
+    },
+    {
+      "path": "code/maize_clock/references.py",
+      "source": "public v1.0.4/maize_clock/references.py",
+      "source_sha256": "7c586520ef3a07b18fd27f63eef4b59d3139bb47dd13ad685b941a8bb8f08aa1",
+      "copied_sha256": "7c586520ef3a07b18fd27f63eef4b59d3139bb47dd13ad685b941a8bb8f08aa1",
+      "path_adapted": false
+    },
+    {
+      "path": "code/maize_clock/transfer_adaptation.py",
+      "source": "public v1.0.4/maize_clock/transfer_adaptation.py",
+      "source_sha256": "d568d62c07660985efe93b612a1072ef3dbb1d8da04124edbdbbe3e05e0d3534",
+      "copied_sha256": "d568d62c07660985efe93b612a1072ef3dbb1d8da04124edbdbbe3e05e0d3534",
+      "path_adapted": false
+    },
+    {
+      "path": "code/maize_clock/transfer_artifacts.py",
+      "source": "public v1.0.4/maize_clock/transfer_artifacts.py",
+      "source_sha256": "dd95f2c645d2b0b0a2a3413619a252dec07ef6109b8ab0472c44fb14308f484d",
+      "copied_sha256": "dd95f2c645d2b0b0a2a3413619a252dec07ef6109b8ab0472c44fb14308f484d",
+      "path_adapted": false
+    },
+    {
+      "path": "code/maize_clock/transfer_attention.py",
+      "source": "public v1.0.4/maize_clock/transfer_attention.py",
+      "source_sha256": "00e9aaacd43f6207abcce5ba66f24c00b71a27cd77e93fd739b027c618d388d5",
+      "copied_sha256": "00e9aaacd43f6207abcce5ba66f24c00b71a27cd77e93fd739b027c618d388d5",
+      "path_adapted": false
+    },
+    {
+      "path": "code/maize_clock/transfer_design.py",
+      "source": "public v1.0.4/maize_clock/transfer_design.py",
+      "source_sha256": "8908f6cbf5458de23e95c6843d9d7304fe9fd37f3201392693b6dbdd117769e4",
+      "copied_sha256": "8908f6cbf5458de23e95c6843d9d7304fe9fd37f3201392693b6dbdd117769e4",
+      "path_adapted": false
+    },
+    {
+      "path": "code/maize_clock/transfer_evaluate.py",
+      "source": "public v1.0.4/maize_clock/transfer_evaluate.py",
+      "source_sha256": "7e55afe451680b982f60953a49e656f4cd2348a158e253e1cb4254d82e0633ba",
+      "copied_sha256": "7e55afe451680b982f60953a49e656f4cd2348a158e253e1cb4254d82e0633ba",
+      "path_adapted": false
+    },
+    {
+      "path": "code/maize_clock/transfer_fit.py",
+      "source": "public v1.0.4/maize_clock/transfer_fit.py",
+      "source_sha256": "00dd16a2739423b9c33f6630445bf464444b46d8325cf5753280189bb44b9e7c",
+      "copied_sha256": "00dd16a2739423b9c33f6630445bf464444b46d8325cf5753280189bb44b9e7c",
+      "path_adapted": false
+    },
+    {
+      "path": "code/manuscript_line_numbers.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "a6f0dcb2cd1eab82a12f55a267d2585b36e7da94e15d3f996c53c6d5a73e6972"
+    },
+    {
+      "path": "code/replay_local_example.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "6ad4102b9b0771b67bc2c3a67abec24d4021e0b342c83e52c373911f45284830"
+    },
+    {
+      "path": "code/replay_weather_example.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "c2f8438616681ae7d50a6d8b9d2719ce2bc2202b7d2a296f171134a7eef9b654"
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/__init__.py",
+      "source": "public v1.0.4/research/annual_temperature_transfer/__init__.py",
+      "source_sha256": "cd76d90582b4f06038e6018c878c4767f95c4891d1d140491a5cecd6c2492375",
+      "copied_sha256": "cd76d90582b4f06038e6018c878c4767f95c4891d1d140491a5cecd6c2492375",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/analysis.py",
+      "source": "public v1.0.4/research/annual_temperature_transfer/analysis.py",
+      "source_sha256": "d106d5880c9234e50001b61c8957f236a6e11a76001fd4c273fbe87782efc462",
+      "copied_sha256": "d106d5880c9234e50001b61c8957f236a6e11a76001fd4c273fbe87782efc462",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/article.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "4cf68fb15c6e71543060be7f9e82e3e01091b70521dcfd38f0591379f7968f0a"
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/climate.py",
+      "source": "public v1.0.4/research/annual_temperature_transfer/climate.py",
+      "source_sha256": "a26243a3b4a7c49851d36286d0434cb76c5d16ebbd45be1cfe397b3e5e17f796",
+      "copied_sha256": "9c320ebc52708010b1ff38743bfd5d15bbc8aa7cb48d1d0391364ee3ae1b4c92",
+      "path_adapted": true
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/core.py",
+      "source": "public v1.0.4/research/annual_temperature_transfer/core.py",
+      "source_sha256": "6cba1d4b47fdd54c2e200c783e3e729bfa989007323a5451dc1ba194068c4ff5",
+      "copied_sha256": "6cba1d4b47fdd54c2e200c783e3e729bfa989007323a5451dc1ba194068c4ff5",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/design.py",
+      "source": "public v1.0.4/research/annual_temperature_transfer/design.py",
+      "source_sha256": "da1c5bf18a54e9c1cbc8066b6bf6efd6336c663fdcf0e267be356e4ed4854a85",
+      "copied_sha256": "da1c5bf18a54e9c1cbc8066b6bf6efd6336c663fdcf0e267be356e4ed4854a85",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/discussion.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "def03582823c12d1fb3947edfd69d8c0633eafc465bee7ff7f56b8afe487566a"
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/era5_weather.py",
+      "source": "public v1.0.4/research/annual_temperature_transfer/era5_weather.py",
+      "source_sha256": "291c7f0e03771ef16a0a25a6a879523b8ba9b64cef6a6833a4164ba2c15c36a6",
+      "copied_sha256": "291c7f0e03771ef16a0a25a6a879523b8ba9b64cef6a6833a4164ba2c15c36a6",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/expanded_content.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "0422d72fa95a3d3a4ac1d7f2c90409e5b0d8b11d3425aa7324385fa1ccb2fd15"
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/figures.py",
+      "source": "current presentation/research/annual_temperature_transfer/figures.py",
+      "source_sha256": "0679cd2c11e53e4b5f7c724966a6140358614d7551b28f05ea6e4d32c25e6003",
+      "copied_sha256": "b02bf0bd28cfbfffeb44fae4de317faa18fe3cfd6e44b498f03f58b268a7d9f7",
+      "path_adapted": true,
+      "locally_adapted": true,
+      "local_change": "Current presentation or full-source reconstruction integration; original source hash retained"
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/fit.py",
+      "source": "public v1.0.4/research/annual_temperature_transfer/fit.py",
+      "source_sha256": "34a615aca75d7f08b7ffa92e93b63e94ee8e9ef40ccec9d2881d5471e649302c",
+      "copied_sha256": "34a615aca75d7f08b7ffa92e93b63e94ee8e9ef40ccec9d2881d5471e649302c",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/insights.py",
+      "source": "public v1.0.4/research/annual_temperature_transfer/insights.py",
+      "source_sha256": "4c517df8158d82bfc16579e157fd973725d10ad843a672dbe8ac0dc7dabfb3c2",
+      "copied_sha256": "682a95fe2bdb67d79b81585b9b7778ceb117e7c92f72c80841f52c3e32eb358b",
+      "path_adapted": true
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/journal_graphic.py",
+      "source": "Local authorized abstract revision,2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "5cd0d0543107659e9b88c23a2860e69a75e2f8c466c6b691c3353e8b80eb2a41",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/layout.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "f8d7a25d91d914e9b5cdc47f153866f64c33db4b7ef009159f5418b52c93de1d"
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/spatial.py",
+      "source": "public v1.0.4/research/annual_temperature_transfer/spatial.py",
+      "source_sha256": "dd6c6dd6ccd2a54b75141519cefd49a8f9cdaa3c67ff30e5bf9374b3c9f33b3b",
+      "copied_sha256": "7d7ae4e63661dcc8fbc621aaf7692133e84f93a409600b99d221b7b19288a876",
+      "path_adapted": true
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/spatial_figures.py",
+      "source": "public v1.0.4/research/annual_temperature_transfer/spatial_figures.py",
+      "source_sha256": "ae770586816a4231cecb44787ccad677f6c98ba32399e92bb261b4fa8a593b26",
+      "copied_sha256": "76baccc246814c1d20ae502f551ef03bf9ba7ea945a5ff247ebdbc73672a4ac4",
+      "path_adapted": true,
+      "presentation_adapted": true,
+      "local_change": "Germany-only overview display and explicit German workflow scope; scientific cohorts and estimators unchanged",
+      "locally_adapted": true
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/structure.py",
+      "source": "public v1.0.4/research/annual_temperature_transfer/structure.py",
+      "source_sha256": "5d0f505db0206c87a23606e0a31da26d035c6ea15888c3d52bf89f7ee23f3184",
+      "copied_sha256": "88e97336dce106b3711de9b0509d6f3396bba057123f3a46d22827e27101868d",
+      "path_adapted": true
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/study_network.py",
+      "source": "public v1.0.4/research/annual_temperature_transfer/study_network.py",
+      "source_sha256": "ddf8de524e5ad81b56861ebd74320c5afd403be2875b93dbf25dd5f9fc6b5b7e",
+      "copied_sha256": "680b9e2faeb68499034000804628945dfd19439a716111d2ba0182301b549776",
+      "path_adapted": true
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/verify_layout.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "d060dfe7474e019b6c43d0881eef31c605c244b1ecdeab7ad14a89b0a83080c9"
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/verify_spatial.py",
+      "source": "public v1.0.4/research/annual_temperature_transfer/verify_spatial.py",
+      "source_sha256": "bee4ee66c0088e606043dbe4d4158c97ffe8a51f7c2d08244527c5a360a34e46",
+      "copied_sha256": "501ebeb1d20a036e902c9735dc90341999ee318b5f2f46e1abbae8eb778ad8df",
+      "path_adapted": true
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/violin.py",
+      "source": "current presentation/research/annual_temperature_transfer/violin.py",
+      "source_sha256": "bcb2e0e77dbcc879582e2ec16675b96b2e371627d44b6c21b78eb202253538a9",
+      "copied_sha256": "bcb2e0e77dbcc879582e2ec16675b96b2e371627d44b6c21b78eb202253538a9",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/weather.py",
+      "source": "public v1.0.4/research/annual_temperature_transfer/weather.py",
+      "source_sha256": "2ac4ab2892fd3d9074bae748a3d1a2b930fa6cb98db495c384bcd224116f4897",
+      "copied_sha256": "2ac4ab2892fd3d9074bae748a3d1a2b930fa6cb98db495c384bcd224116f4897",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/weather_analysis.py",
+      "source": "public v1.0.4/research/annual_temperature_transfer/weather_analysis.py",
+      "source_sha256": "48b94020e4995b2c9e2e9d8b1040327763b1f8b84333cd13ce78bb53710a8477",
+      "copied_sha256": "48b94020e4995b2c9e2e9d8b1040327763b1f8b84333cd13ce78bb53710a8477",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/weather_design.py",
+      "source": "public v1.0.4/research/annual_temperature_transfer/weather_design.py",
+      "source_sha256": "b5e27fe2fd5e35553d8a81686882eba5863ed7e58e1b247c10e5010573242fbf",
+      "copied_sha256": "b5e27fe2fd5e35553d8a81686882eba5863ed7e58e1b247c10e5010573242fbf",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/weather_fit.py",
+      "source": "public v1.0.4/research/annual_temperature_transfer/weather_fit.py",
+      "source_sha256": "ec144658536b0f43a2e56faa5c7055d06b337becd976ffe8bb7d6543b6869d4c",
+      "copied_sha256": "ec144658536b0f43a2e56faa5c7055d06b337becd976ffe8bb7d6543b6869d4c",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/annual_temperature_transfer/workflow.py",
+      "source": "public v1.0.4/research/annual_temperature_transfer/workflow.py",
+      "source_sha256": "bd48c2a3c98146f9be2a492fd1e22943c48976336f6afa2b574f4bec2e6155f9",
+      "copied_sha256": "a8bfd734d55d1df2166d2600563ce4da283369643038b6747c503e9900442be1",
+      "path_adapted": true,
+      "locally_adapted": true,
+      "local_change": "Germany-only overview display and explicit German workflow scope; scientific cohorts and estimators unchanged"
+    },
+    {
+      "path": "code/research/environment_sowing_transfer/evaluate_foreign.py",
+      "source": "public v1.0.4/research/environment_sowing_transfer/evaluate_foreign.py",
+      "source_sha256": "a3063c37db8dc38f92a196c9b4333c54b9b36adee25ea25967742cfec4f795d0",
+      "copied_sha256": "23c4d6ff81b0572fdf765aa7f11ed25b6124481a70339fcf27b7f93a8045bd1c",
+      "path_adapted": true
+    },
+    {
+      "path": "code/research/environment_sowing_transfer/run_study.py",
+      "source": "public v1.0.4/research/environment_sowing_transfer/run_study.py",
+      "source_sha256": "747ef007d4be925c538db777dbf8f8805190b1aca436ad773cdc2654d2e7ae84",
+      "copied_sha256": "4d9787a5e1ef196a0915a3174ebf6d149c579b9321422d83e65da2375c49f495",
+      "path_adapted": true
+    },
+    {
+      "path": "code/research/europe_climate_transfer/__init__.py",
+      "source": "public v1.0.4/research/europe_climate_transfer/__init__.py",
+      "source_sha256": "305cb99b8ad9cbf17b66c0186de2387b48f40211a7bef1141dff09026062a511",
+      "copied_sha256": "305cb99b8ad9cbf17b66c0186de2387b48f40211a7bef1141dff09026062a511",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/europe_climate_transfer/joint_data.py",
+      "source": "public v1.0.4/research/europe_climate_transfer/joint_data.py",
+      "source_sha256": "792ba4d8832a0bbe7682cb27f2fb8dc109087e2d53760602ef6c2a5aca66e957",
+      "copied_sha256": "63db2c607163b783b50eec72b7b118a94be7d3c12f518154c56ca2dd7efd47b7",
+      "path_adapted": true
+    },
+    {
+      "path": "code/research/full_source_benchmark/__init__.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "9bdb2b9db3fc45b56d1a73ab9bdb06b5d660ca37eedc771e8fdbcc1e690539e8",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "code/research/full_source_benchmark/analysis.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "baec0c0f028891c6c04a0261af185f9dd1065626fb27ac9392e6f2f0f404d18c",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "code/research/full_source_benchmark/design.json",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "da789897a890ba7c2f03baa9977b60009e0e92a8e4507dfeb8593cf2e2fb5868",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "code/research/full_source_benchmark/figures.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "5f6dfc5142bc2621886b3e27d642535c831948619e76bd1bf997b22d2a9c5363",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "code/research/full_source_benchmark/fit.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "bf14e225b2ab9ff034fce078a9cd67ea4248625fffdd1435048c7ebe6315ea16",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "code/research/mae_bias_revision/__init__.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "11128bbf55ca60f6c86b10ac4bfb1180741c88e82fafd098aabc87b105e82f7b"
+    },
+    {
+      "path": "code/research/mae_bias_revision/analysis.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "b21a042e6b376a9761ab4c75837178ffd7d19a64f6212a2914574e8760a6af62"
+    },
+    {
+      "path": "code/research/mae_bias_revision/figures.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "bf137de1bec02013fc4ab42fb976b6bcc493db24378faaba0e9effacc9641393"
+    },
+    {
+      "path": "code/research/phenology_exploration/__init__.py",
+      "source": "public v1.0.4/research/phenology_exploration/__init__.py",
+      "source_sha256": "a8a209cc1fe00bdc39e9d41341a2a09263d290b74bb7e1895a97e524f2e05a9a",
+      "copied_sha256": "a8a209cc1fe00bdc39e9d41341a2a09263d290b74bb7e1895a97e524f2e05a9a",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/phenology_exploration/adaptation.py",
+      "source": "public v1.0.4/research/phenology_exploration/adaptation.py",
+      "source_sha256": "ce6c6f52b4e7b542a4c706781b553012dbf795f9641e839467eb39076d1784f6",
+      "copied_sha256": "ce6c6f52b4e7b542a4c706781b553012dbf795f9641e839467eb39076d1784f6",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/phenology_exploration/analysis.py",
+      "source": "public v1.0.4/research/phenology_exploration/analysis.py",
+      "source_sha256": "54c1e7e1c856327a299fd5c3a5f32d420d2ddf9e3361f5d355a9a4e026939f3c",
+      "copied_sha256": "54c1e7e1c856327a299fd5c3a5f32d420d2ddf9e3361f5d355a9a4e026939f3c",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/phenology_exploration/article.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "72ab7a3ba80c32c77fd6cd901bc6097179f63deb48dcd8eb41837242b9313d86"
+    },
+    {
+      "path": "code/research/phenology_exploration/core.py",
+      "source": "public v1.0.4/research/phenology_exploration/core.py",
+      "source_sha256": "0dfee9ef3b7e487bd8dd3913f591ad84aeae3d7af46d7f2ee928a49ed1e68e81",
+      "copied_sha256": "0dfee9ef3b7e487bd8dd3913f591ad84aeae3d7af46d7f2ee928a49ed1e68e81",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/phenology_exploration/data.py",
+      "source": "public v1.0.4/research/phenology_exploration/data.py",
+      "source_sha256": "01a62f75e3257c4d2fe6897b75b287aeedaf5fad0ba6791416cd53e34a291deb",
+      "copied_sha256": "e42f12228ed6a997c4df8b8154125a39fb06244d721178ce2d0f19f8ceb66067",
+      "path_adapted": true
+    },
+    {
+      "path": "code/research/phenology_exploration/diagnostics.py",
+      "source": "public v1.0.4/research/phenology_exploration/diagnostics.py",
+      "source_sha256": "99ef516decf2d38a83cb9fdf10dd97f79072804487c21bd17f00d91b7f50a751",
+      "copied_sha256": "99ef516decf2d38a83cb9fdf10dd97f79072804487c21bd17f00d91b7f50a751",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/phenology_exploration/experiments.py",
+      "source": "public v1.0.4/research/phenology_exploration/experiments.py",
+      "source_sha256": "db511afa05c8b0f5dedff189194f437087a9fb429d621ba6a7974e8f3d149282",
+      "copied_sha256": "db511afa05c8b0f5dedff189194f437087a9fb429d621ba6a7974e8f3d149282",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/phenology_exploration/local_extensions.py",
+      "source": "public v1.0.4/research/phenology_exploration/local_extensions.py",
+      "source_sha256": "d8de20608899f06724c707f4b9bdca07478c8b4be300ae01307aca2642e38645",
+      "copied_sha256": "d8de20608899f06724c707f4b9bdca07478c8b4be300ae01307aca2642e38645",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/phenology_exploration/models.py",
+      "source": "public v1.0.4/research/phenology_exploration/models.py",
+      "source_sha256": "378041270dd82d83e3df26b5174a9f982048e817a9a25af2604b765cadb236b9",
+      "copied_sha256": "378041270dd82d83e3df26b5174a9f982048e817a9a25af2604b765cadb236b9",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/phenology_exploration/neural.py",
+      "source": "public v1.0.4/research/phenology_exploration/neural.py",
+      "source_sha256": "b766a737aa9cee73e7f53d37a4f0f9e43da82dd1758b61bdc00459aa0fb7d5b5",
+      "copied_sha256": "b766a737aa9cee73e7f53d37a4f0f9e43da82dd1758b61bdc00459aa0fb7d5b5",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/phenology_exploration/provenance.py",
+      "source": "public v1.0.4/research/phenology_exploration/provenance.py",
+      "source_sha256": "442a2a19136da59118f5e35da54376bc85335f5c4e3a05154f891ac61ba2b155",
+      "copied_sha256": "442a2a19136da59118f5e35da54376bc85335f5c4e3a05154f891ac61ba2b155",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/phenology_exploration/publication.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "4eea5aa1b0a1d1e524abd7eb2f9242f659a17fff1ac57e44c47588e55ba4be22"
+    },
+    {
+      "path": "code/research/phenology_exploration/response_followup.py",
+      "source": "public v1.0.4/research/phenology_exploration/response_followup.py",
+      "source_sha256": "78694adafc644c478f2436c2d16dd6bf31fc0e0bc3d95ff40dd05dfe91d3e2c8",
+      "copied_sha256": "78694adafc644c478f2436c2d16dd6bf31fc0e0bc3d95ff40dd05dfe91d3e2c8",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/phenology_exploration/support_blend.py",
+      "source": "public v1.0.4/research/phenology_exploration/support_blend.py",
+      "source_sha256": "ef2d469af1f7ce707513e821701340d06ee1b3cde119dbb9700941d3f2bcc75a",
+      "copied_sha256": "ef2d469af1f7ce707513e821701340d06ee1b3cde119dbb9700941d3f2bcc75a",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/residual_learning/__init__.py",
+      "source": "public v1.0.4/research/residual_learning/__init__.py",
+      "source_sha256": "ab05bd5c0008bf3ffacd61e8e6fcfb259d9bd3936d9445413344b9ec62d1464a",
+      "copied_sha256": "ab05bd5c0008bf3ffacd61e8e6fcfb259d9bd3936d9445413344b9ec62d1464a",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/residual_learning/features.py",
+      "source": "public v1.0.4/research/residual_learning/features.py",
+      "source_sha256": "b75c59cf81270ad6257f58e391920a489e772ac5564fe732fccec2bbece414e1",
+      "copied_sha256": "b75c59cf81270ad6257f58e391920a489e772ac5564fe732fccec2bbece414e1",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/residual_learning/learners.py",
+      "source": "public v1.0.4/research/residual_learning/learners.py",
+      "source_sha256": "7986f9c00ce9b52c5626ed76a72220495a71a52f40e9439a4af1e188f267463c",
+      "copied_sha256": "7986f9c00ce9b52c5626ed76a72220495a71a52f40e9439a4af1e188f267463c",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/residual_learning/study.py",
+      "source": "public v1.0.4/research/residual_learning/study.py",
+      "source_sha256": "6a171472cdd7b4754070749b765ee4a14eab41981c473c0cd395ba42ad06d3b3",
+      "copied_sha256": "335977cf8d22e5f086c50b73d15a80e6e7679b2bb94142720618704957e33e22",
+      "path_adapted": true
+    },
+    {
+      "path": "code/research/sowing_day_transfer/__init__.py",
+      "source": "public v1.0.4/research/sowing_day_transfer/__init__.py",
+      "source_sha256": "336ebf636ea9ab98a1e6b5db4fdce56e03128101b4479449feeef9a51eb5d84d",
+      "copied_sha256": "336ebf636ea9ab98a1e6b5db4fdce56e03128101b4479449feeef9a51eb5d84d",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/sowing_day_transfer/models.py",
+      "source": "public v1.0.4/research/sowing_day_transfer/models.py",
+      "source_sha256": "da4ac01d13e01564d4b2780c626c6189ef52fc2b886d163a29bea2186acde1d4",
+      "copied_sha256": "da4ac01d13e01564d4b2780c626c6189ef52fc2b886d163a29bea2186acde1d4",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/sowing_day_transfer/multistage_models.py",
+      "source": "public v1.0.4/research/sowing_day_transfer/multistage_models.py",
+      "source_sha256": "d24b705fe7c9c376b59626c77497134dd0ea6aee0d3e4d315fe5d90dde3b8dd2",
+      "copied_sha256": "d24b705fe7c9c376b59626c77497134dd0ea6aee0d3e4d315fe5d90dde3b8dd2",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/temperature_cluster_transfer/__init__.py",
+      "source": "public v1.0.4/research/temperature_cluster_transfer/__init__.py",
+      "source_sha256": "13566905d487c2a948ed9dce55ff3effe08719846018308089b6910204f58d70",
+      "copied_sha256": "13566905d487c2a948ed9dce55ff3effe08719846018308089b6910204f58d70",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/temperature_cluster_transfer/physical.py",
+      "source": "public v1.0.4/research/temperature_cluster_transfer/physical.py",
+      "source_sha256": "c14d5b76d9214dee1e8d8844f347f7b21f53eb5033d3ca6876d4bcfca25c6272",
+      "copied_sha256": "c14d5b76d9214dee1e8d8844f347f7b21f53eb5033d3ca6876d4bcfca25c6272",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/unified_transfer/__init__.py",
+      "source": "public v1.0.4/research/unified_transfer/__init__.py",
+      "source_sha256": "bc04735bf5a426cf05e9864471313cf0ffcc392978e87d9419d8b0a73a38146f",
+      "copied_sha256": "bc04735bf5a426cf05e9864471313cf0ffcc392978e87d9419d8b0a73a38146f",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/unified_transfer/assets/naturalearth/NOTICE.md",
+      "source": "public v1.0.4/research/unified_transfer/assets/naturalearth/NOTICE.md",
+      "source_sha256": "7f57a3e771690980ebc8d94c56f986abbe86df5888d1fe5386da1a1102df5ca6",
+      "copied_sha256": "7f57a3e771690980ebc8d94c56f986abbe86df5888d1fe5386da1a1102df5ca6",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.README.html",
+      "source": "public v1.0.4/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.README.html",
+      "source_sha256": "28dbb5a402d8f4f752ae338b819a3fd3cc60b26752fae16e764de19189e9c995",
+      "copied_sha256": "28dbb5a402d8f4f752ae338b819a3fd3cc60b26752fae16e764de19189e9c995",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.VERSION.txt",
+      "source": "public v1.0.4/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.VERSION.txt",
+      "source_sha256": "548358969090d629b41888f5fe664ac31b7203dfd849f7c1ef820ac055b62191",
+      "copied_sha256": "548358969090d629b41888f5fe664ac31b7203dfd849f7c1ef820ac055b62191",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.cpg",
+      "source": "public v1.0.4/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.cpg",
+      "source_sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+      "copied_sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.dbf",
+      "source": "public v1.0.4/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.dbf",
+      "source_sha256": "4ec70fc63842df719ee1f9f7bb0469b528b1eab8099c44aea6c7339a10cacc4b",
+      "copied_sha256": "4ec70fc63842df719ee1f9f7bb0469b528b1eab8099c44aea6c7339a10cacc4b",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.prj",
+      "source": "public v1.0.4/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.prj",
+      "source_sha256": "98aaf3d1c0ecadf1a424a4536de261c3daf4e373697cb86c40c43b989daf52eb",
+      "copied_sha256": "98aaf3d1c0ecadf1a424a4536de261c3daf4e373697cb86c40c43b989daf52eb",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.shp",
+      "source": "public v1.0.4/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.shp",
+      "source_sha256": "94799b91827fb9f32c0c517d60281572abcf5e4647d19b7f52217071cc4fd30d",
+      "copied_sha256": "94799b91827fb9f32c0c517d60281572abcf5e4647d19b7f52217071cc4fd30d",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.shx",
+      "source": "public v1.0.4/research/unified_transfer/assets/naturalearth/ne_50m_admin_0_countries.shx",
+      "source_sha256": "1813a4b55c3e9db05b7f5f77adbfe7b8f8ad5bce870dab0f4e5ec937f0e5a791",
+      "copied_sha256": "1813a4b55c3e9db05b7f5f77adbfe7b8f8ad5bce870dab0f4e5ec937f0e5a791",
+      "path_adapted": false
+    },
+    {
+      "path": "code/research/unified_transfer/equations.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "96939e0faaa837163b5c015bddba321e1deb2be801b7df3d9a9036b071cdbe59"
+    },
+    {
+      "path": "code/research/unified_transfer/models.py",
+      "source": "public v1.0.4/research/unified_transfer/models.py",
+      "source_sha256": "a40dd2642cdf1fb701bb951c00c9fd42592f70dd1f3298fa0bef744bb7fc3f7b",
+      "copied_sha256": "a40dd2642cdf1fb701bb951c00c9fd42592f70dd1f3298fa0bef744bb7fc3f7b",
+      "path_adapted": false
+    },
+    {
+      "path": "code/scripts/figure_export.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "7329f80c551165f7d84b0a97a60dd2a140fd387f715b41870b5894566adf473e",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "code/scripts/make_manifest.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "7730201094d6411bc138b1c6fe1a37cd5ba4c3edb6fe6b64f739c21e4c5fcd16"
+    },
+    {
+      "path": "code/scripts/prepare_data.py",
+      "source": "public v1.0.4/scripts/prepare_data.py",
+      "source_sha256": "a75705f3c5870f3873c01fff0093111a4af2bf5aafd88c540297dd4ef54e76d8",
+      "copied_sha256": "257a7ed3a02626acf1ab4ac3fcd4a28d7a529e8b30fea340f9e9767e98255f53",
+      "path_adapted": true
+    },
+    {
+      "path": "code/scripts/reconstruct_metrics.py",
+      "source": "public v1.0.4/scripts/reconstruct_metrics.py",
+      "source_sha256": "a85db91bdc0dccca7fddee0dc8737820d4a27a165d89dbefe0c5279b3cec0701",
+      "copied_sha256": "12127bb4f777368d225ca159c6312fc5412b32ab04e027b62884317506253a8a",
+      "path_adapted": true,
+      "locally_adapted": true,
+      "local_change": "Current presentation or full-source reconstruction integration; original source hash retained"
+    },
+    {
+      "path": "code/scripts/refit_benchmark.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "a18293f718500bc07255d0fe285ced7aec6ef1c4a2ff9cede585101fcfbcdbcb"
+    },
+    {
+      "path": "code/scripts/refit_case.py",
+      "source": "public v1.0.4/scripts/refit_case.py",
+      "source_sha256": "df41ae517f4f77e7e1a9c525dbb6d19bf9687cf451f7371d32693940fdb6dc2b",
+      "copied_sha256": "35def2dd260ab31bf1982df226770093ca62acdf71fff90a2e0c285d783ff71a",
+      "path_adapted": true
+    },
+    {
+      "path": "code/scripts/render_figures.py",
+      "source": "public v1.0.4/scripts/render_figures.py",
+      "source_sha256": "e821103c6454c9281b34fa4b9adbcef0a6b9a5056468c1b28c8f06276349a25e",
+      "copied_sha256": "7249f6eda8154dd1d90e77b8632a042009b0de11d181f95f5cdff082957a1b16",
+      "path_adapted": true,
+      "locally_adapted": true,
+      "local_change": "Germany-only overview display and explicit German workflow scope; scientific cohorts and estimators unchanged"
+    },
+    {
+      "path": "code/scripts/replay_full_source.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "c16e50135c0e0c523b9d67960cf46ab8296b95c38d076bbe760d29825b4ee904",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "code/scripts/verify_all_figures.py",
+      "source": "Local authorized Germany display revision,2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "b8b72ac5fb99ce766eee4f171646232227957a516e7e4527c7b7741c868eff40",
+      "local_addition": true
+    },
+    {
+      "path": "code/scripts/verify_environment.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "07de3a69c62de9d0b23c81bd08f645f4fa186dcc6e3ab43c528ba1cdde5d5c96"
+    },
+    {
+      "path": "code/scripts/verify_figure5.py",
+      "source": "public v1.0.4/scripts/verify_figure5.py",
+      "source_sha256": "9e740bf0edaa9732061f860c2282ea3379ec11736e4243a91f5e8c06e03162c9",
+      "copied_sha256": "71e950858bb4f96b0a14f98899df8040f757378ec0ca0e1c25e72312d3913517",
+      "path_adapted": true,
+      "locally_adapted": true,
+      "local_change": "Current presentation or full-source reconstruction integration; original source hash retained"
+    },
+    {
+      "path": "code/scripts/verify_graphical_abstract.py",
+      "source": "Local authorized abstract revision,2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "f1324cbb90b4b4c5b893d88c903af8e7cab9a11f331e58b52ab7d82a04e79302",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "code/scripts/verify_primary_manuscript.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "78dfad46739aec03fd7feb89d04399f806262519d0c51ca86b010fe03fc4ca9a",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "code/scripts/verify_weather_violins.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "29774eef180d7427ec1ae46eaceffd942994e4fc635c5578c6ec983f513291cc"
+    },
+    {
+      "path": "code/scripts/verify_workflow.py",
+      "source": "public v1.0.4/scripts/verify_workflow.py",
+      "source_sha256": "f89ed630b09327598c8a6bc92f0db2049732e275b7ea174f985f7c5b21f56e48",
+      "copied_sha256": "f56581cb8d51bd52ff03fa2ea3d2c5b04ada5814fb9d5a91a9ae9741cb6646a0",
+      "path_adapted": true,
+      "locally_adapted": true,
+      "local_change": "Current presentation or full-source reconstruction integration; original source hash retained"
+    },
+    {
+      "path": "code/tests/test_annual_temperature_transfer.py",
+      "source": "public v1.0.4/tests/test_annual_temperature_transfer.py",
+      "source_sha256": "7e7fe8077954e31bdbf7d5e9768ad7ef566093de45f10c94940632f72f685a9f",
+      "copied_sha256": "7e7fe8077954e31bdbf7d5e9768ad7ef566093de45f10c94940632f72f685a9f",
+      "path_adapted": false
+    },
+    {
+      "path": "code/tests/test_expanded_phenology_results.py",
+      "source": "public v1.0.4/tests/test_expanded_phenology_results.py",
+      "source_sha256": "4d1b2632f40dd6e69d3ebb48fca9ae882eaf954bf85a1739bfcbb900f5eabf5b",
+      "copied_sha256": "4d1b2632f40dd6e69d3ebb48fca9ae882eaf954bf85a1739bfcbb900f5eabf5b",
+      "path_adapted": false
+    },
+    {
+      "path": "code/tests/test_full_source_analysis.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "0372ddd527cf2b06b4aaa7ea91431332ffed618c3f892c71f0c611f09769ca52",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "code/tests/test_full_source_fit.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "6d0126b220368b3d3dbc08253097150fd306f17728dacf19078577c51175dc64",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "code/tests/test_full_source_reproduction.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "67aa06650fd7bcc3da35101183ed4adf6ef970ba5a2bcc56d9b276108babebc2",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "code/tests/test_mae_bias_analysis.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "ee22ab9817c5a148b6e7182d584ec310c3f4dd0e41da462185e85eb571f85773"
+    },
+    {
+      "path": "code/tests/test_manuscript_rendering.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "b33ed69b2fd29702f8fb0c1cccfdbf0f94d66bdebaa4f2dc9db21ee409394ee6"
+    },
+    {
+      "path": "code/tests/test_model_interface.py",
+      "source": "Local research/reproduction code",
+      "source_sha256": null,
+      "local_addition": true,
+      "path_adapted": false,
+      "copied_sha256": "b3fd32cb8e57218e09abee7905bfa38fdd765358063e37e0e48d5afb47b478fd"
+    },
+    {
+      "path": "code/update_author_documents.py",
+      "source": "Local authorized abstract revision,2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "725c08e2b47d3ce2a411334e130bc052d78578b924f43e0605e5c3a40c6ad122",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "model/T/__init__.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "6f16e75a884f3848e9310b034d8dcf835ba2b2927d5339253bb0df4115f3b1a9",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "model/T/__main__.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "ba1b59a84ca3c1c229655131ce3e82402fae7ba33c5e17ebba4f6bcf87abe7ed",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "model/__init__.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "b99aa44e3da873aca9a2967e706b9e2625ff8b884a1033eecc98afe2a6a59f97",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "model/__main__.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "model/_wrapper.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "886792e1cf77f895f6cdbbf8ab99c451ae4e2f0dbe130185800de50a5f77f3f4",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "model/api.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "994d6c328b0888b768836185ef3647036c3803af284f0acff37ad8ab16ed741a",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "model/cli.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "7753a9cb204613b9c09c486d3ed7f4083a689bc475ac1f6f7d9d4d425261f0a5",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "model/make_example.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "dbed0aa0ff06546122a8a719bbe7aa39e764eb87137dee5fa41b8623378afeff",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "model/nonlinear_T/__init__.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "b51ebf330a5e28ab4822a520af5cc20bb05b08ed4026a4ac8121385bc86cd956",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "model/nonlinear_T/__main__.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "e8d3fa41d1b4f1cb3c62f9411d87befdb2945bda952792a8bd0d223a8760d7e3",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "model/residual_MLP/__init__.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "a1c3b9e9d8af4a63e24004826861acd04dfb7ac63b0ddf23e35d2b9e0baa02c1",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "model/residual_MLP/__main__.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "d9155f2fecca2f1c331e2976ef07dd8481622cb4e1d695193630d7b0a22344e3",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "model/residual_RF/__init__.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "5253e8a11716078d63f50f362f50c6ff9a09de60475ac65afad80c45e08f5fb0",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "model/residual_RF/__main__.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "5325154b9cf91d450ed778c1d62e6b4e597f60156427a6632b18bc1d679b90a2",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "model/support_blend/__init__.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "12809bc9d0e88c2e5f9829e52a79f91fb3ed5f9c29829b261f80c51132d9b3da",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "model/support_blend/__main__.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "7ebe5334dc8a2c88411dc064c447ffb1f77a0c8e955c2ab4abe1e91af2beb23d",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "model/thermal_transformer/__init__.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "f00fa93241fb21372a80c44325ee75160b7cfdacfab80ba7645bb98b3f16d912",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "model/thermal_transformer/__main__.py",
+      "source": "Local authorized revision, 2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "33878b030c0cc74f0341165902b575f817c73cb747f5cb16251ad3b132327cc8",
+      "path_adapted": false,
+      "local_addition": true
+    },
+    {
+      "path": "reproduce.py",
+      "source": "Local authorized abstract revision,2026-10-26",
+      "source_sha256": null,
+      "copied_sha256": "47b4fb99836813fc4bc4e65c698e46893ecbad49eead074f703220a49a130c6f",
+      "path_adapted": false,
+      "local_addition": true
+    }
+  ]
+}

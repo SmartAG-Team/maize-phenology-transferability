@@ -1,0 +1,54 @@
+{
+  "version": "v1.1.0",
+  "repository": "SmartAG-Team/maize-phenology-transferability",
+  "archives": [
+    {
+      "name": "study_dataset.tar.gz",
+      "bytes": 191665840,
+      "sha256": "08d90d1df3a72400d5634a12bed3fc83594f3de0a70821890bfb41980778fe03",
+      "restores": [
+        "data/study_dataset"
+      ],
+      "url": "https://github.com/SmartAG-Team/maize-phenology-transferability/releases/download/v1.1.0/study_dataset.tar.gz"
+    },
+    {
+      "name": "annual_transfer_results.tar.gz",
+      "bytes": 918040453,
+      "sha256": "f739a5e166af8911d30d5b92ffb2cc019c68559c65d8af46af66999155730d0e",
+      "restores": [
+        "data/results/annual_temperature_transfer_20261024"
+      ],
+      "url": "https://github.com/SmartAG-Team/maize-phenology-transferability/releases/download/v1.1.0/annual_transfer_results.tar.gz"
+    },
+    {
+      "name": "exploration_results.tar.gz",
+      "bytes": 1280684913,
+      "sha256": "849703474248c05c2f1c5500d4021de6f1bce4736ade3897c7c52598d45bca84",
+      "restores": [
+        "data/results/phenology_exploration_20261023"
+      ],
+      "url": "https://github.com/SmartAG-Team/maize-phenology-transferability/releases/download/v1.1.0/exploration_results.tar.gz"
+    },
+    {
+      "name": "full_source_results.tar.gz",
+      "bytes": 52969839,
+      "sha256": "bdc3f3042dcdd063a2a27a054604c87ee78ed813a5a7bdfe24d0fc4d744917d2",
+      "restores": [
+        "data/results/full_source_benchmark_20261026",
+        "data/results/europe_climate_transfer_20261015"
+      ],
+      "url": "https://github.com/SmartAG-Team/maize-phenology-transferability/releases/download/v1.1.0/full_source_results.tar.gz"
+    },
+    {
+      "name": "evaluation_evidence.tar.gz",
+      "bytes": 1522390410,
+      "sha256": "ddc69d7c970bfe8fef895afa9ba0be50c478315cf667be730880b09fca878f06",
+      "restores": [
+        "data/evidence"
+      ],
+      "url": "https://github.com/SmartAG-Team/maize-phenology-transferability/releases/download/v1.1.0/evaluation_evidence.tar.gz"
+    }
+  ],
+  "extraction_root": "repository root",
+  "unpublished_manuscript_included": false
+}

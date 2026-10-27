@@ -89,9 +89,9 @@
     },
     {
       "path": "research/annual_temperature_transfer/figures.py",
-      "source_sha256": "0679cd2c11e53e4b5f7c724966a6140358614d7551b28f05ea6e4d32c25e6003",
-      "released_sha256": "0679cd2c11e53e4b5f7c724966a6140358614d7551b28f05ea6e4d32c25e6003",
-      "change": "weather-effect distribution display; no estimator or fit changes",
+      "source_sha256": "93599783706983ee286e30586f901def2e3c230708480c65953e0f401a73c97c",
+      "released_sha256": "93599783706983ee286e30586f901def2e3c230708480c65953e0f401a73c97c",
+      "change": "v1.0.4 removes standalone titles and enforces caption-only titles; scientific fitting unchanged",
       "previous_released_sha256": "b8a7133aa4864eb0d620abe935d1ec4cb7facdf7c4995aec5b0a07668179dde4"
     },
     {
@@ -427,23 +427,192 @@
     },
     {
       "path": "research/annual_temperature_transfer/violin.py",
-      "source_sha256": "bcb2e0e77dbcc879582e2ec16675b96b2e371627d44b6c21b78eb202253538a9",
-      "released_sha256": "bcb2e0e77dbcc879582e2ec16675b96b2e371627d44b6c21b78eb202253538a9",
-      "change": "weather-effect distribution display; no estimator or fit changes"
+      "source_sha256": "75df0d3e77ed7b0fc47d2081a84b4e306629d57ce8e566b46cce9a8ed65a4e1b",
+      "released_sha256": "75df0d3e77ed7b0fc47d2081a84b4e306629d57ce8e566b46cce9a8ed65a4e1b",
+      "change": "new descriptive visualization helper for paired frozen outputs"
     }
   ],
   "full_data_delivery": "Complete model-ready study dataset and all supporting fitted-result files in three versioned GitHub Release assets; provider raw products and unrelated datasets retain the scope described in README.md.",
   "full_model_ready_study_dataset_included": true,
-  "figure_code_version": "1.0.5",
+  "figure_code_version": "1.0.4",
   "figure5_revision": "Paired local-history violin distributions; frozen inputs, models, accuracy curves and intervals retained.",
   "original_acquisition_archive_scope": {
     "included_in_full": false,
     "complete_model_ready_study_inputs_included": true,
-    "reference_climate": "Frozen reference aggregates, calendar-completeness receipts and site assignments are supplied. The full 1981\u20132010 daily reference-grid series is not locally archived; its reaggregation requires authorized provider access.",
+    "reference_climate": "Frozen reference aggregates, calendar-completeness receipts and site assignments are supplied. The full 1981–2010 daily reference-grid series is not locally archived; its reaggregation requires authorized provider access.",
     "unrelated_collections": "Other countries and unused acquired collections are outside this study release."
   },
   "documentation_version": "1.0.2",
   "figure1_revision": "Question-led workflow, shared input/calibration foundation, model palette and four parallel comparison cards.",
   "figure_title_policy": "Standalone titles omitted; descriptions retained in captions.",
-  "figure10_revision": "Paired weather-effect violins; three source draws averaged before equal-head/site weighting, original means and paired confidence intervals preserved, complete observed tails retained."
+  "local_revision_20261026": {
+    "graphical_abstract": "Illustrated crop-development and directional-transfer design; PNG only at 300 dpi; CSV/JSON evidence and geometry retained",
+    "authors": [
+      "Linjia Yao",
+      "Bin Chen",
+      "Dingrong Wu",
+      "Liang He",
+      "Amit Kumar Srivastava",
+      "Linchao Li",
+      "Gang Zhao"
+    ],
+    "contribution_allocation": "First draft, pending confirmation",
+    "model_interfaces": "New root model/ adapters and individual-model subfolders call the original estimators; archived scientific model source unchanged",
+    "supporting_original_data_unchanged": true,
+    "public_release_updated": false
+  },
+  "author_affiliation_markers_20261026": {
+    "authors": [
+      "Linjia Yao",
+      "Bin Chen",
+      "Dingrong Wu",
+      "Liang He",
+      "Amit Kumar Srivastava",
+      "Linchao Li",
+      "Gang Zhao"
+    ],
+    "affiliations_complete": true,
+    "pending_author_affiliations": [],
+    "affiliation_reference": {
+      "path": "/Users/gangzhao/Documents/workspace/grape_growth_stage-main/paper/grape_pheno_manuscript_ylj.docx",
+      "sha256": "166eb2b3a3ef4077877d896ca54632a8790ffaa05ac19263f005c2c1894971e6",
+      "author_paragraph_index_zero_based": 21,
+      "affiliation_paragraph_indices_zero_based": [
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "scope": "Requested authors and affiliations only; Gang Zhao retains latest user-confirmed full affiliation; Amit Kumar Srivastava retains ZALF only per latest user instruction"
+    },
+    "scientific_content_unchanged": true,
+    "latest_user_override": "Amit Kumar Srivastava: ZALF only; sequential affiliation numbers updated"
+  },
+  "editorial_revision_20261026": {
+    "source_sha256": "eaf33c720d962e386a73b225c85a592cfc15524fb995564bd9ba3d637278cf0c",
+    "changes": [
+      "Results aligned with experimental Methods; interpretation and repeated findings reduced",
+      "Discussion and Conclusion openings identify phenology-model evaluation explicitly",
+      "Figure and Table 2 captions shortened",
+      "CRediT consolidated to one paragraph",
+      "Manuscript-preparation AI declaration limited to grammar and readability",
+      "Figure 7 displays Germany only; full statistical cohort and numeric values retained"
+    ],
+    "figure7": {
+      "country": "Germany",
+      "displayed_cells_per_panel": 829,
+      "full_analysis_cells_per_panel": 841,
+      "all_original_5046_plot_values_retained": true,
+      "shared_scale_km": 200,
+      "width_cm": 19,
+      "font_pt": 12,
+      "source_numeric_results_unchanged": true
+    },
+    "fitting_estimators_and_frozen_predictions_unchanged": true
+  },
+  "full_source_primary_20261026": {
+    "source": "data/results/full_source_benchmark_20261026",
+    "evidence": "data/evidence/full_source_benchmark",
+    "design": "code/research/full_source_benchmark/design.json",
+    "fit_sha256": "bf14e225b2ab9ff034fce078a9cd67ea4248625fffdd1435048c7ebe6315ea16",
+    "design_sha256": "da789897a890ba7c2f03baa9977b60009e0e92a8e4507dfeb8593cf2e2fb5868",
+    "models": 6,
+    "folds": 5,
+    "source_site_or_year_subsampling": false,
+    "archived_estimators_unchanged": true,
+    "controlled_results_preserved": true,
+    "public_release_updated": false
+  },
+  "figure_export_20261026": {
+    "format": "PNG only",
+    "dpi": 300,
+    "width_cm": 19,
+    "font_pt": 12,
+    "figure7_country": "Germany",
+    "figure7_panel_frames": true
+  },
+  "abstract_graphical_revision_20261026": {
+    "date": "2026-10-26",
+    "source": "Existing full-source primary and fixed-budget transfer evidence",
+    "all_scientific_fits_preserved": true,
+    "full_source_refit_performed": false,
+    "graphical_abstract": "Native19cm×7.6cm;12pt;PNGonly300dpi;empirical response envelope;native quantitative transfer widths",
+    "source_data": "data/graphical_abstract",
+    "source_file": "code/research/annual_temperature_transfer/journal_graphic.py",
+    "source_sha256": "ae2a2d903fd6c30d011817603bc84e4839e92f46d72e329b886188078fd625af",
+    "verification": "outputs/abstract_revision_20261026/verification.json",
+    "public_release_updated": false
+  },
+  "germany_display_revision_20261026": {
+    "scope": "Fig1 German workflow scope and Fig2 Germany-only geographic display",
+    "source_values_and_model_fits_preserved": true,
+    "displayed_overview_sites": 2204,
+    "full_overview_sites": 2232,
+    "png_dpi": 300,
+    "public_release_updated": false
+  },
+  "ordinary_mae_revision_20261026": {
+    "date": "2026-10-26",
+    "active_evidence": "data/evidence/mae_bias_revision_20261026",
+    "evaluation_metrics": [
+      "MAE",
+      "Signed bias"
+    ],
+    "valid_prediction": "finite, nonnegative, strictly less than the observation-specific weather horizon",
+    "failure_handling": "Excluded from date-error metrics; counts and proportions retained separately",
+    "paired_comparisons": "Shared valid observation IDs before hierarchical aggregation",
+    "new_model_fits": 0,
+    "model_selection_changed": false,
+    "training_period": [
+      1981,
+      2010
+    ],
+    "primary_test_period": [
+      2011,
+      2025
+    ],
+    "archived_original_metrics_preserved": true,
+    "evaluation_code": "code/research/mae_bias_revision/",
+    "evidence_receipt_sha256": "55f6cb6da641d9210b49ac6a99e0e34fc5f2fda4f8dff965a4855a8cdf102fe8",
+    "frozen_prediction_and_receipt_inputs": 867,
+    "frozen_evaluation_outputs": 56,
+    "numerical_verification": {
+      "primary_max_reconstruction_error_days": 1.7763568394002505e-15,
+      "primary_max_interval_reconstruction_error_days": 1.7763568394002505e-15,
+      "zone_penalty_algebra_max_error_days": 8.526512829121202e-14,
+      "zone_bias_difference_algebra_max_error_days": 8.526512829121202e-14,
+      "zone_site_stage_source_model_rows": 1965276,
+      "zone_undefined_common_support_rows": 752,
+      "primary_benefit_harm_max_error_days": 7.105427357601002e-15,
+      "insights_benefit_harm_max_error_days": 4.263256414560601e-14,
+      "all_observed_targets_retained_in_failure_audits": true,
+      "primary_common_valid_raw_pair_max_error_days": 2.842170943040401e-14,
+      "local_common_valid_raw_pair_max_error_days": 3.552713678800501e-15,
+      "weather_common_valid_raw_pair_max_error_days": 1.7763568394002505e-15
+    },
+    "experiment_counts": {
+      "primary_folds": 5,
+      "primary_models": 6,
+      "annual_temperature_cases": 90,
+      "prior_cases": 80,
+      "prior_80_site_paired_neural_cases": 30,
+      "local_folds": 5,
+      "local_budgets": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "weather_cases_per_provider": 15,
+      "frozen_weather_fits": 30,
+      "weather_saved_prediction_combinations": 60,
+      "new_fits": 0
+    },
+    "figures": "paper/figures/",
+    "documents": "paper/",
+    "no_predicted_dates_regenerated": true,
+    "primary_model_parameters_retained": true,
+    "line_numbers": "Continuous in both Word and PDF"
+  }
 }

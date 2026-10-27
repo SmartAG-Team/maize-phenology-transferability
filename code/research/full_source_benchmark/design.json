@@ -1,0 +1,184 @@
+{
+  "study": "full_source_primary_20261026",
+  "purpose": "Primary six-model comparison using all eligible historical source observations",
+  "source_period": [
+    1981,
+    2010
+  ],
+  "evaluation_primary": [
+    2011,
+    2025
+  ],
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "outer_design": "Existing 50-km spatial blocks and 25-km buffer, frozen roles unchanged",
+  "source_filter": "foldN_case == source_1981_2010 and pre2011_prefix_eligible",
+  "source_site_cap": null,
+  "source_year_cap": null,
+  "native_unit_sampling": "All eligible source-native units and available heads; no one-unit/site-year or fixed-year subsampling",
+  "tuning": "Frozen source inner role 2; fitting uses roles 0/1; complete-source refit follows selection",
+  "teachers": "Three whole-source-block T teachers; original minimum 30 calibration environments/head",
+  "source_counts": [
+    {
+      "fold": 0,
+      "eligible_source_sites": 1052,
+      "eligible_source_labels": 73381,
+      "eligible_source_units": 18507,
+      "source_role_sites": 1052,
+      "source_role_labels": 73381,
+      "source_role_units": 18507,
+      "years_min": 1981,
+      "years_max": 2010,
+      "all_source_units_have_frozen_inner_roles": true
+    },
+    {
+      "fold": 1,
+      "eligible_source_sites": 1054,
+      "eligible_source_labels": 78179,
+      "eligible_source_units": 19076,
+      "source_role_sites": 1054,
+      "source_role_labels": 78179,
+      "source_role_units": 19076,
+      "years_min": 1981,
+      "years_max": 2010,
+      "all_source_units_have_frozen_inner_roles": true
+    },
+    {
+      "fold": 2,
+      "eligible_source_sites": 1061,
+      "eligible_source_labels": 78759,
+      "eligible_source_units": 19564,
+      "source_role_sites": 1061,
+      "source_role_labels": 78759,
+      "source_role_units": 19564,
+      "years_min": 1981,
+      "years_max": 2010,
+      "all_source_units_have_frozen_inner_roles": true
+    },
+    {
+      "fold": 3,
+      "eligible_source_sites": 1053,
+      "eligible_source_labels": 74107,
+      "eligible_source_units": 18329,
+      "source_role_sites": 1053,
+      "source_role_labels": 74107,
+      "source_role_units": 18329,
+      "years_min": 1981,
+      "years_max": 2010,
+      "all_source_units_have_frozen_inner_roles": true
+    },
+    {
+      "fold": 4,
+      "eligible_source_sites": 1112,
+      "eligible_source_labels": 79834,
+      "eligible_source_units": 19891,
+      "source_role_sites": 1112,
+      "source_role_labels": 79834,
+      "source_role_units": 19891,
+      "years_min": 1981,
+      "years_max": 2010,
+      "all_source_units_have_frozen_inner_roles": true
+    }
+  ],
+  "models": [
+    "T",
+    "nonlinear_T",
+    "residual_RF",
+    "residual_MLP",
+    "thermal_transformer",
+    "support_blend"
+  ],
+  "alpha_grid": [
+    0.015625,
+    0.03125,
+    0.0625,
+    0.125,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.5
+  ],
+  "rf_strengths": [
+    0.0,
+    0.125,
+    0.25,
+    0.375,
+    0.5,
+    0.625,
+    0.75,
+    0.875,
+    1.0
+  ],
+  "mlp_strengths": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "initial_mlp_steps": [
+    80,
+    160,
+    320
+  ],
+  "initial_transformer_checkpoints": [
+    0,
+    40,
+    80,
+    120,
+    160,
+    200,
+    240,
+    280,
+    320
+  ],
+  "neural_extension": {
+    "budgets": [
+      640,
+      1280,
+      2560
+    ],
+    "rule": "Extend only when the source-selected nonzero neural fit is at the largest tested budget and improves over the best smaller-budget candidate by more than 0.01 d; stop after a plateau or 2560 updates",
+    "minimum_improvement_days": 0.01,
+    "transformer_checkpoints": "Every 40 updates from zero through the current ceiling, including extension runs",
+    "mlp_checkpoints": "Declared endpoint budgets 80,160,320,640,1280,2560 with the same strength grid"
+  },
+  "optimizer_seed": 17,
+  "source_sampling_draws": null,
+  "weighting": "Original head/site/year hierarchy",
+  "invalid_prediction_loss_days": 366,
+  "uncertainty": "2000 conditional whole-target-block resamples; one full-source fit/fold; no source draw resampling",
+  "frozen_controlled_experiments": "Retain original 40/80-site, 8-year source comparisons and matched local/zone/weather experiments",
+  "artifact_contract": {
+    "fold_directory": "fold{fold}",
+    "predictions": "predictions.csv.gz",
+    "receipt": "complete.json",
+    "models": "models/{model}.pkl",
+    "memberships": "source_memberships.csv.gz",
+    "prediction_columns": [
+      "label_id",
+      "unit",
+      "u",
+      "site",
+      "site_year",
+      "block",
+      "year",
+      "head",
+      "observed",
+      "horizon",
+      "period",
+      "T",
+      "nonlinear_T",
+      "residual_RF",
+      "residual_MLP",
+      "thermal_transformer",
+      "support_blend"
+    ]
+  },
+  "test_isolation": "Source-only selection and normalization; target observations enter evaluation only; do not tune on target metrics",
+  "estimator_code_policy": "Reuse existing scientific implementations; add orchestration and source-only neural-budget extension without editing archived estimators"
+}

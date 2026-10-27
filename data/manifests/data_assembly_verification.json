@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "verified_utc": "2026-10-25T19:57:25.058092+00:00",
+  "summary": {
+    "copied_files": 2583,
+    "copied_bytes": 2776650384,
+    "archive_member_files": 2372,
+    "archive_member_bytes": 2566821140,
+    "model_ready_context_files": 12,
+    "scientific_result_files": 2353,
+    "saved_fit_and_transformer_checkpoints": 520,
+    "compact_evidence_files": 198,
+    "replay_example_files": 6,
+    "local_replay_example_files": 4,
+    "climate_transfer_table_parts": 6,
+    "copied_provenance_documents": 3
+  },
+  "data_manifest": {
+    "path": "data/data_manifest.json",
+    "bytes": 1375036,
+    "sha256": "0b3fc98ce89a2039f3e827f54fc4ee73f2eb1316d5f7659f8992b4ebce55df64"
+  },
+  "actual_total_files_including_manifest": 2584,
+  "actual_total_bytes_including_manifest": 2778025420,
+  "source_assets": [
+    {
+      "name": "study_model_ready_data.tar.gz",
+      "bytes": 192279817,
+      "sha256": "151943c880c9d9d7875f45cf70f1a4585450893318014f0305ad7333e121d964",
+      "version": "1.0.0",
+      "url": "https://github.com/SmartAG-Team/maize-phenology-transferability/releases/download/v1.0.0/study_model_ready_data.tar.gz"
+    },
+    {
+      "name": "annual_temperature_transfer_results.tar.gz",
+      "bytes": 925199001,
+      "sha256": "d6040d8f6c85286e855d7ecda6605760eb99a8e28bb2e0a68814f25bc38ae749",
+      "version": "1.0.0",
+      "url": "https://github.com/SmartAG-Team/maize-phenology-transferability/releases/download/v1.0.0/annual_temperature_transfer_results.tar.gz"
+    },
+    {
+      "name": "year_matched_exploration_results.tar.gz",
+      "bytes": 1282043169,
+      "sha256": "f730d2f81d36550dbe7fab2ee0d3ce8bddb02b1338b8a55359e61c802b274195",
+      "version": "1.0.0",
+      "url": "https://github.com/SmartAG-Team/maize-phenology-transferability/releases/download/v1.0.0/year_matched_exploration_results.tar.gz"
+    }
+  ],
+  "embedded_manifests": [
+    {
+      "path": "data/results/phenology_exploration_20261023/year_matched/release_asset_manifest.json",
+      "verified_records": 1115
+    },
+    {
+      "path": "data/results/annual_temperature_transfer_20261024/release_asset_manifest.json",
+      "verified_records": 1238
+    }
+  ],
+  "checks": {
+    "source_asset_size_and_sha256": "passed",
+    "every_archive_regular_member_retained": "passed",
+    "archive_path_safety_and_no_links": "passed",
+    "embedded_release_and_study_manifests": "passed",
+    "compact_manifest_selected_file_hashes": "passed",
+    "all_destination_files_freshly_rehashed": "passed",
+    "destination_inventory_equals_manifest_plus_self": "passed",
+    "no_symlinks_hardlinks_or_forbidden_metadata": "passed"
+  }
+}

@@ -1,0 +1,4 @@
+panel,label,finding,evidence,representation
+(a),Late phenology,BBCH 83 and 87 supply 78% of the all-source linear-to-nonlinear thermal gain,data/evidence/mae_bias_revision_20261026/primary/stage_performance.csv,Bracket covers BBCH 83 and 87 only; crop forms are schematic
+(a),Learned residual,All-source residual MLP adds a paired 0.50-day gain over nonlinear T,data/evidence/mae_bias_revision_20261026/primary/correction_summary.csv,Network adds signed date corrections to linear T; no date-shift direction is depicted
+(b),Directional transfer,Warmest-to-coldest penalties exceed the reverse-direction point estimates,data/evidence/mae_bias_revision_20261026/matrix.csv,Arrow direction is training to evaluation; tail width is proportional to excess MAE

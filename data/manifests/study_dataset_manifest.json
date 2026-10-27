@@ -1,0 +1,66 @@
+{
+  "files": [
+    {
+      "path": "data/study_dataset/fold0_source_roles.csv.gz",
+      "bytes": 279655,
+      "sha256": "a597bd06252e2587cdf55c69ef86b57186acb2dc900fe2a4fbd8439abc750846"
+    },
+    {
+      "path": "data/study_dataset/fold1_source_roles.csv.gz",
+      "bytes": 288152,
+      "sha256": "828f6d9289e55e3a4c5064ce708b021fb4e4badd755b6ab562ceecd866008476"
+    },
+    {
+      "path": "data/study_dataset/fold2_source_roles.csv.gz",
+      "bytes": 295368,
+      "sha256": "53bd0e6f1c082f340aa654b9140998bc05bceff3c4e2b66e69999f5fba19142b"
+    },
+    {
+      "path": "data/study_dataset/fold3_source_roles.csv.gz",
+      "bytes": 277027,
+      "sha256": "9a7cae62a2ed624c3616d4275efe6f4a3f91d96eb73a557a9fded52fbc675765"
+    },
+    {
+      "path": "data/study_dataset/fold4_source_roles.csv.gz",
+      "bytes": 300513,
+      "sha256": "bc7a7bfcd7f42b1a8e6351a9c5ad1784aeb997ffedae26b168e5bdd1bfb09973"
+    },
+    {
+      "path": "data/study_dataset/labels.csv.gz",
+      "bytes": 7333367,
+      "sha256": "fea2f76ced02774efccd87855117a71cbc7f8f1bd213d9fc4e6293ec14c19327"
+    },
+    {
+      "path": "data/study_dataset/metadata.json",
+      "bytes": 2012,
+      "sha256": "77dfaff8bd32a4d973935cff90b46edff2ae4fc77cf653e9cb1e02cd107866dd"
+    },
+    {
+      "path": "data/study_dataset/native_inputs.npz",
+      "bytes": 179126924,
+      "sha256": "382920008108c4906f719557af356b44774e469422c04f23b30a9809d185c792"
+    },
+    {
+      "path": "data/study_dataset/units.csv.gz",
+      "bytes": 2178278,
+      "sha256": "37cfb9e6bb50cf75ca6231cc8ebc4f899ad33e4744393b6e107766f361391a6f"
+    },
+    {
+      "path": "data/study_dataset/weather_alias_lineage.csv.gz",
+      "bytes": 2187862,
+      "sha256": "9522475f893215094dc129020ade69bd505d858fda2f72d02c43573da39c9e7d"
+    },
+    {
+      "path": "results/europe_climate_transfer_20261015/data/sites.csv",
+      "bytes": 410979,
+      "sha256": "ffbd75729e01517c8726e34eda34c48b55cbdc637588ad0f7b2647f0c27b5ee8"
+    },
+    {
+      "path": "results/europe_climate_transfer_20261015/sampling/site_fold_memberships.csv",
+      "bytes": 1354630,
+      "sha256": "33c558826847ed933295e1c90d9d89396dd8faaa26fefb62bfb411e7217e336e"
+    }
+  ],
+  "array_equality_verified": true,
+  "csv_roundtrip_exact": true
+}

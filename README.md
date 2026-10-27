@@ -1,102 +1,117 @@
-# Maize phenology transferability
+# Predictive skill and environmental transferability of maize phenology models
 
-Data and scientific code supporting **Predictive skill and environmental transferability of maize phenology models**. Repository: [SmartAG-Team/maize-phenology-transferability](https://github.com/SmartAG-Team/maize-phenology-transferability). The [v1.0.0 Release](https://github.com/SmartAG-Team/maize-phenology-transferability/releases/tag/v1.0.0) contains the complete model-ready study dataset, fitted models, native predictions, frozen memberships and weather-comparison inputs. All supporting data and code are available through this repository and its Release assets.
+Scientific code, callable models, qualified study inputs, frozen fitted artifacts, numerical evidence and figures supporting the maize phenology transferability study. Version **v1.1.0** adds the complete-source primary comparison (30 fitted artifacts across five frozen spatial folds), ordinary valid-date MAE and signed-bias evaluation, and the corresponding revised figures and plotting workbooks.
 
-The comparisons use source-qualified German maize event dates. They assess linear and nonlinear thermal-time references, residual RF/MLP, a causal thermal Transformer, source-support blending, local historical updating, annual-temperature transfer and DWD versus ERA5-Land forcing. Native BBCH 87 remains distinct from harvest or generic physiological maturity. Supplied-weather retrospective skill is not operational forecast skill.
+The study uses 207,325 qualified stage dates from 47,008 seasonal records in the German exact-date network. Evaluation is retrospective with supplied weather. Prediction failures are counted separately; paired comparisons intersect valid observations before site-year, site and equal-stage averaging. Saved fits and their original training/selection objectives remain unchanged. These comparisons do not establish operational forecasting skill or generalization outside the observed network.
 
-Version **v1.0.1** adds a head-balanced violin distribution to Figure 5, paired from zero to five historical local years. Full model inputs and fitted results retain the checked **v1.0.0** data assets.
+## Files
 
-## Quick reproduction
-
-Python 3.12 and the pinned dependencies are recorded in `requirements.txt`. From the repository root:
-
-```sh
-python -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python scripts/verify_release.py
-.venv/bin/python replay_weather_example.py
-.venv/bin/python replay_local_example.py
-.venv/bin/python scripts/render_figures.py
-.venv/bin/python scripts/reconstruct_metrics.py
-.venv/bin/python -m pytest tests/test_annual_temperature_transfer.py tests/test_expanded_phenology_results.py -q
-```
-
-These commands use the compact evidence in Git. They regenerate all 10 main figures and Figure S1, reconstruct 924 grouped numerical comparisons and conditional intervals, and replay saved-model predictions. The examples contain 24 native units for all six weather models and three sites for nonlinear-T local updating across 0/1/3/5 historical-year budgets. They verify computation and do not constitute additional independent accuracy estimates.
-
-## Complete study data and fitted cases
-
-```sh
-.venv/bin/python scripts/restore_full_data.py --download
-```
-
-Alternatively, download the three `.tar.gz` assets from the Release page into one directory and use `scripts/restore_full_data.py --assets /path/to/assets`. `full_data_assets.json` records their sizes, SHA-256 hashes and download URLs. The script verifies every asset before extraction and refuses unsafe paths or changes to existing local files.
-
-| Release asset | Contents after restoration |
+| Path | Contents |
 | --- | --- |
-| `study_model_ready_data.tar.gz` | `data/study_dataset/`: all 207,325 exact-date labels, 47,008 native units at 2,232 German site groups, native daily Tmin/Tmax/daylength arrays, valid lengths, pre-2011 chronological masks, context variables, all five frozen source roles, weather lineage and site/fold metadata. |
-| `annual_temperature_transfer_results.tar.gz` | `results/annual_temperature_transfer_20261024/`: all annual-zone case fits and keyed predictions, annual climate inputs, structural/spatial/local analyses, DWD station archives, common DWD/ERA5 arrays and paired weather refits. |
-| `year_matched_exploration_results.tar.gz` | `results/phenology_exploration_20261023/year_matched/`: complete source-budget benchmark, frozen source memberships, temperature-response follow-up fits, neural fits, local updating and auxiliary numerical analyses. |
+| `code/` | Scientific fitting, inference, evaluation, figure rendering, replay and tests. |
+| `model/` | Six callable model interfaces with training, prediction, saving and loading. |
+| `data/study_dataset/` | Complete qualified inputs, daily weather arrays and frozen source-fold roles, restored from the Release. |
+| `data/results/` | Earlier fitted models and checkpoints, the 30 primary full-source artifacts, keyed predictions, memberships and source receipts, restored from the Release. |
+| `data/evidence/` | Frozen numerical evidence for metrics and figures, restored from the Release. |
+| `data/example/`, `data/local_example/` | Small saved-model replay inputs and reference predictions. |
+| `paper/figures/` | Eleven PNG figures at 300 dpi, Excel plotting data and captions. |
+| `data/graphical_abstract/` | Graphical-abstract evidence, geometry and layout metadata. |
+| `outputs/` | Locally generated reconstructions, figures and checks; excluded from Git. |
 
-The dataset export preserves all numerical arrays exactly and verifies an exact CSV round trip. Native weather padding is retained; `lengths` and `train_lengths` specify usable daily arrays and the chronological source boundary. Provider definitions, day conventions and attribution remain distinct. Complete model-ready inputs are supplied; unused observations from other countries and unrelated acquired collections are outside this study. Original numerical/binary fitted artifacts are retained byte for byte. Per-file manifests record path sanitization in text provenance and exclusions of manuscript, administrative and review material.
+Unpublished manuscript text, author administration, review records and submission documents remain outside this public distribution. The `paper/` directory contains graphical evidence only. Historical provenance records retain their original source descriptions and paths.
 
-## Inspect inputs and refit
+## Restore the complete data
 
-After restoring the full assets, `research.phenology_exploration.data.load()` reads the portable dataset; `research.annual_temperature_transfer.design.dataset()` applies the frozen annual-temperature zones. Original scientific fitting, teacher prediction, selection, inference, aggregation and resampling modules are under `research/`. The legacy `maize_clock/` identifier is retained for software compatibility.
-
-The following commands validate a frozen case's inputs, source/target separation, inner block roles and membership hash without fitting:
-
-```sh
-.venv/bin/python scripts/refit_case.py --cohort annual --prepare-only
-.venv/bin/python scripts/refit_case.py --cohort dwd --prepare-only
-.venv/bin/python scripts/refit_case.py --cohort era5 --prepare-only
-```
-
-Remove `--prepare-only` to refit all six models for that case. Use `--case NAME` for another frozen case listed in the relevant `cases.json`. New fits go to `outputs/refits/`, preserving released fits. Training is computationally expensive; hardware/library differences can affect fitted weights. Numerical reproduction of the reported comparisons uses the frozen released predictions. Original fitting drivers retain strict code/input receipt guards; changed portable paths or code hashes do not silently qualify as the original calculation.
-
-## Files and interpretation
-
-- `plot_data/` contains exact figure workbooks and captions; generated figures and numerical reconstructions go to `outputs/`.
-- `evidence/` contains frozen qualification, memberships, site/head error tables and summary comparisons. The large climate-transfer table is split into byte-exact chunks and automatically reassembled locally.
-- `SOURCE_PROVENANCE.json`, `release_manifest.json` and the Release manifests document the source snapshot, released files and portable adaptations.
-- `DATA_SOURCES.md` records provider attribution and source-specific reuse terms. Saved model files originate from this snapshot; use the checked manifests and a trusted repository copy.
-
-Invalid event dates incur 366 days loss; weighting follows observations within site-year, years per site, sites per head and equal native heads. Target-block intervals condition on fitted models and are exploratory. Weather resampling additionally joins shared stations. Annual-temperature strata and observed transfer contrasts do not identify causal warming or cooling effects. Original event definitions, cohort boundaries and information budgets remain explicit.
-
-Source data retain their own licences; no blanket project-wide software licence is inferred. No access credentials are included or required for offline reproduction.
-
-Optional Earth Engine reacquisition requires the user’s own authorized credentials and project; set `PHENOLOGY_EE_PROJECT` to that project. The original acquisition project is recorded as provenance, and all required offline inputs are already supplied.
-
-To reproduce the revised local-history figure alone:
+Large data are published as five Release assets, each smaller than 2 GiB. `release_assets.json` records their paths, byte sizes, SHA-256 hashes and download URLs. Download them from the [v1.1.0 Release](https://github.com/SmartAG-Team/maize-phenology-transferability/releases/tag/v1.1.0), or use GitHub CLI from the repository root:
 
 ```sh
-.venv/bin/python scripts/render_figures.py --figure fig5
-.venv/bin/python scripts/verify_figure5.py
+mkdir -p outputs/release_assets
+gh release download v1.1.0 --repo SmartAG-Team/maize-phenology-transferability --pattern '*.tar.gz' --pattern SHA256SUMS --dir outputs/release_assets
+(cd outputs/release_assets && shasum -a 256 -c SHA256SUMS)
+for asset in outputs/release_assets/*.tar.gz; do tar -xzf "$asset"; done
 ```
 
-Figure 5 retains the accuracy curve and adds all 5,323 matched site–endpoint gains per model, with equal endpoint weights, weighted medians and the original mean/block intervals. Its signed asinh axis retains every tail and expands the centre; density estimation uses untransformed days. Exact pairs, density curves, summaries and intervals are in `plot_data/fig5.xlsx`.
+Proceed with extraction only when every checksum passes. Each archive restores its recorded `data/` subdirectories relative to the repository root. The `manifest.json` inventory records every distributed file, including files restored from these archives. Provider credentials and access to the original workstation are unnecessary for saved-result reproduction.
 
-## Reproduction boundary
+## Offline numerical reproduction
 
-Version **v1.0.2** clarifies the boundary between offline numerical reproduction and source reacquisition. All reported model comparisons and figures can be reconstructed offline from the supplied qualified inputs, saved fits and keyed predictions. The reference climatology is supplied as frozen Earth Engine aggregates, calendar-completeness receipts and site assignments; the complete 1981–2010 daily ERA5-Land reference-grid series is not locally archived. Recomputing that source aggregation requires authorized access to the specified provider collection and a fresh output directory, preserving the original receipt guards. Source products retain their own versions and day conventions. Full model retraining and live weather reacquisition are separate operations from replaying frozen results.
-
-## Workflow figure
-
-Version **v1.0.3** improves Figure 1 with shared inputs and calibration controls, six consistently coloured model formulations, four parallel comparison cards and a common evaluation step. Conceptual node/edge coordinates, text placement and encodings are in `plot_data/fig1.xlsx`; they represent study design, not measured performance values.
+Python 3.12 is the recorded environment. Direct dependencies are pinned in `requirements.txt`; `requirements.lock.txt` records the macOS ARM transitive environment. After restoring the Release assets:
 
 ```sh
-.venv/bin/python scripts/render_figures.py --figure fig1
-.venv/bin/python scripts/verify_workflow.py
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+mkdir -p outputs
+.venv/bin/python code/replay_weather_example.py
+.venv/bin/python code/replay_local_example.py
+.venv/bin/python code/scripts/replay_full_source.py
+.venv/bin/python code/scripts/reconstruct_metrics.py
+.venv/bin/python code/scripts/render_figures.py
+.venv/bin/python code/scripts/verify_workflow.py
+.venv/bin/python code/scripts/verify_all_figures.py
 ```
 
-## Figure title policy
+The replay commands check saved predictions, including every held prediction from the 30 full-source primary artifacts. Numerical reconstruction checks ordinary MAE, signed bias, paired contrasts and conditional intervals, and retains the earlier 924 grouped numerical audit checks. Figure reconstruction uses frozen evidence and checks plotting workbooks independently. Figures use the same 19 cm final width, 12 pt text, 300 dpi PNG output and consistent model colours.
 
-Figures have no standalone titles. Descriptive titles belong in captions. Axis labels, legends, panel letters and labels inside workflow nodes retain their explanatory roles. The renderer rejects figure and axes titles; the workflow verifier rejects standalone text outside diagram nodes.
-
-## Weather-effect distributions
-
-Version **v1.0.5** displays the paired weather effects in Figure 10 as 18 violin distributions. Three source draws are averaged before weighting sites equally within each of seven equally weighted native endpoints. The original paired means and station/block confidence intervals remain unchanged; white diamonds mark descriptive medians. Gaussian density is computed in raw days; the signed-asinh display retains complete observed tails.
+The source-isolation test compares complete selection receipts. Run tests with a sequential joblib backend to avoid parallel random-forest summation differences in that synthetic fixture; published fitting settings remain unchanged:
 
 ```sh
-.venv/bin/python scripts/render_figures.py --figure fig10
-.venv/bin/python scripts/verify_weather_violins.py
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONPATH=code:. .venv/bin/python - <<'PY_TEST'
+import sys, pytest
+from joblib import parallel_config
+with parallel_config(backend='sequential'):
+    sys.exit(pytest.main(['code/tests', '-q', '-p', 'no:cacheprovider']))
+PY_TEST
 ```
+
+File integrity can be checked independently with the Python standard library:
+
+```sh
+python3 - <<'PY_VERIFY'
+from pathlib import Path
+import hashlib, json
+records = json.loads(Path('manifest.json').read_text())['files']
+for record in records:
+    path = Path(record['path'])
+    assert path.is_file() and not path.is_symlink(), path
+    assert path.stat().st_size == record['bytes'], path
+    digest = hashlib.file_digest(path.open('rb'), 'sha256').hexdigest()
+    assert digest == record['sha256'], path
+print(f"Verified {len(records)} files")
+PY_VERIFY
+```
+
+## Call or train individual models
+
+The six model interfaces are `T`, `nonlinear_T`, `residual_RF`, `residual_MLP`, `thermal_transformer` and `support_blend`. Input schemas, callable examples and a small training example are documented in [`model/README.md`](model/README.md).
+
+```sh
+.venv/bin/python -m model.nonlinear_T predict --inputs data/example/native_inputs.npz --weather dwd --artifact data/example --output outputs/nonlinear_T_dwd.npy
+.venv/bin/python -m model.residual_MLP train --inputs SOURCE.npz --labels SOURCE.csv --output outputs/residual_MLP.pkl
+```
+
+The primary comparison uses every eligible pre-2011 source record in each frozen spatial fold: 1,052–1,112 sites and 73,381–79,834 stage dates. Held sites, buffer sites and later years remain excluded from training. The 40/80-site experiments remain fixed-budget controls. To refit one primary fold (repeat for folds 0–4):
+
+```sh
+PYTHONPATH=code:. .venv/bin/python -m research.full_source_benchmark.fit --fold 0 --output outputs/full_source_refits --device cpu
+```
+
+The primary refit has no source-site or source-year cap. On supported Apple hardware, `--device mps` enables Transformer fitting on the GPU. New fits retain their own code/input signatures. Hardware and library differences can affect fitted weights; replay of frozen predictions is separate from optimizer reruns.
+
+The earlier frozen annual-temperature, DWD and ERA5 cases and fixed-budget benchmark can also be refitted:
+
+```sh
+.venv/bin/python code/scripts/refit_case.py --cohort annual --all-cases --prepare-only
+.venv/bin/python code/scripts/refit_case.py --cohort dwd --all-cases --prepare-only
+.venv/bin/python code/scripts/refit_case.py --cohort era5 --all-cases --prepare-only
+.venv/bin/python code/scripts/refit_benchmark.py --prepare-only
+```
+
+Remove `--prepare-only` to run optimization. Newly fitted outputs use `outputs/`; published fitted artifacts remain frozen.
+
+## Sources and reproduction limits
+
+`DATA_SOURCES.md` records DWD, Copernicus/ECMWF and Natural Earth attribution and source-specific reuse terms. No blanket software licence is assigned. DWD station observations, ERA5-Land UTC reanalysis and AgERA5 local-day products retain their distinct definitions and provenance. Native BBCH 87 remains distinct from harvest or generic physiological maturity.
+
+Qualified 1981–2010 reference-climate aggregates, Earth Engine responses and calendar/source receipts are included. Complete historical daily reference grids were not archived. Recreating provider aggregates requires separately authorized live provider access; daily weather used for study fitting and prediction is included. Optional Earth Engine reacquisition uses the user's own credentials and `PHENOLOGY_EE_PROJECT`. No authentication material is distributed.
+
+Earlier releases remain available with their original evidence and scoring definitions. The active v1.1.0 summaries are under `data/evidence/mae_bias_revision_20261026/`; primary full-source fits are under `data/results/full_source_benchmark_20261026/`.

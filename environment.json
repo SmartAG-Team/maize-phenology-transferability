@@ -1,0 +1,22 @@
+{
+  "python": "3.12.14",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "direct_packages": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "torch": "2.14.1",
+    "matplotlib": "3.11.2",
+    "python-docx": "1.2.0",
+    "reportlab": "5.0.1",
+    "pymupdf": "1.28.2",
+    "openpyxl": "3.1.5",
+    "Pillow": "12.3.0",
+    "pytest": "9.1.1",
+    "pyproj": "3.8.0",
+    "pyshp": "3.1.6"
+  },
+  "full_environment_lock": "requirements.lock.txt",
+  "cpu_reproduction": true
+}
