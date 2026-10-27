@@ -12,3 +12,13 @@ data/results/
 data/evidence/
 *credentials*
 *token*
+
+# Unpublished manuscript and authoring sources remain local.
+/paper/*
+!/paper/figures/
+!/paper/graphical_abstract.png
+!/paper/graphical_abstract_caption.txt
+/code/research/annual_temperature_transfer/discussion.py
+/code/research/annual_temperature_transfer/expanded_content.py
+/code/research/annual_temperature_transfer/article.py
+/code/research/phenology_exploration/article.py

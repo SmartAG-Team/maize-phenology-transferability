@@ -10,8 +10,8 @@
   "files": [
     {
       "path": ".gitignore",
-      "bytes": 157,
-      "sha256": "44bbdd85a13a34ffd466adeb750aadc271983e3ace326179b790c939160490b3"
+      "bytes": 537,
+      "sha256": "70dc35039ac55cd0c3b3a4cdeb39e438f6f89205f6affba2faa126ad1dccc390"
     },
     {
       "path": "CITATION.cff",
