@@ -3,31 +3,37 @@
   "repository": "SmartAG-Team/maize-phenology-transferability",
   "archives": [
     {
-      "name": "study_dataset.tar.gz",
-      "bytes": 191665840,
-      "sha256": "08d90d1df3a72400d5634a12bed3fc83594f3de0a70821890bfb41980778fe03",
+      "name": "study_model_ready_data.tar.gz",
+      "bytes": 192279817,
+      "sha256": "151943c880c9d9d7875f45cf70f1a4585450893318014f0305ad7333e121d964",
+      "url": "https://github.com/SmartAG-Team/maize-phenology-transferability/releases/download/v1.0.0/study_model_ready_data.tar.gz",
+      "version": "v1.0.0",
+      "extraction_directory": ".",
       "restores": [
         "data/study_dataset"
-      ],
-      "url": "https://github.com/SmartAG-Team/maize-phenology-transferability/releases/download/v1.1.0/study_dataset.tar.gz"
+      ]
     },
     {
-      "name": "annual_transfer_results.tar.gz",
-      "bytes": 918040453,
-      "sha256": "f739a5e166af8911d30d5b92ffb2cc019c68559c65d8af46af66999155730d0e",
+      "name": "annual_temperature_transfer_results.tar.gz",
+      "bytes": 925199001,
+      "sha256": "d6040d8f6c85286e855d7ecda6605760eb99a8e28bb2e0a68814f25bc38ae749",
+      "url": "https://github.com/SmartAG-Team/maize-phenology-transferability/releases/download/v1.0.0/annual_temperature_transfer_results.tar.gz",
+      "version": "v1.0.0",
+      "extraction_directory": "data",
       "restores": [
         "data/results/annual_temperature_transfer_20261024"
-      ],
-      "url": "https://github.com/SmartAG-Team/maize-phenology-transferability/releases/download/v1.1.0/annual_transfer_results.tar.gz"
+      ]
     },
     {
-      "name": "exploration_results.tar.gz",
-      "bytes": 1280684913,
-      "sha256": "849703474248c05c2f1c5500d4021de6f1bce4736ade3897c7c52598d45bca84",
+      "name": "year_matched_exploration_results.tar.gz",
+      "bytes": 1282043169,
+      "sha256": "f730d2f81d36550dbe7fab2ee0d3ce8bddb02b1338b8a55359e61c802b274195",
+      "url": "https://github.com/SmartAG-Team/maize-phenology-transferability/releases/download/v1.0.0/year_matched_exploration_results.tar.gz",
+      "version": "v1.0.0",
+      "extraction_directory": "data",
       "restores": [
         "data/results/phenology_exploration_20261023"
-      ],
-      "url": "https://github.com/SmartAG-Team/maize-phenology-transferability/releases/download/v1.1.0/exploration_results.tar.gz"
+      ]
     },
     {
       "name": "full_source_results.tar.gz",
@@ -37,6 +43,8 @@
         "data/results/full_source_benchmark_20261026",
         "data/results/europe_climate_transfer_20261015"
       ],
+      "version": "v1.1.0",
+      "extraction_directory": ".",
       "url": "https://github.com/SmartAG-Team/maize-phenology-transferability/releases/download/v1.1.0/full_source_results.tar.gz"
     },
     {
@@ -46,9 +54,11 @@
       "restores": [
         "data/evidence"
       ],
+      "version": "v1.1.0",
+      "extraction_directory": ".",
       "url": "https://github.com/SmartAG-Team/maize-phenology-transferability/releases/download/v1.1.0/evaluation_evidence.tar.gz"
     }
   ],
-  "extraction_root": "repository root",
-  "unpublished_manuscript_included": false
+  "unpublished_manuscript_included": false,
+  "unchanged_asset_members_verified": 2369
 }

@@ -22,16 +22,22 @@ Unpublished manuscript text, author administration, review records and submissio
 
 ## Restore the complete data
 
-Large data are published as five Release assets, each smaller than 2 GiB. `release_assets.json` records their paths, byte sizes, SHA-256 hashes and download URLs. Download them from the [v1.1.0 Release](https://github.com/SmartAG-Team/maize-phenology-transferability/releases/tag/v1.1.0), or use GitHub CLI from the repository root:
+Large data are supplied through five Release assets, each smaller than 2 GiB. Three byte-identical base-data assets retain their original v1.0.0 URLs; v1.1.0 adds the full-source results and revised evaluation evidence. All 2,369 reused files match the current manifest byte for byte. `release_assets.json` records their paths, byte sizes, SHA-256 hashes and download URLs. Download them from the [v1.1.0 Release](https://github.com/SmartAG-Team/maize-phenology-transferability/releases/tag/v1.1.0), or use GitHub CLI from the repository root:
 
 ```sh
 mkdir -p outputs/release_assets
+gh release download v1.0.0 --repo SmartAG-Team/maize-phenology-transferability --pattern '*.tar.gz' --dir outputs/release_assets
 gh release download v1.1.0 --repo SmartAG-Team/maize-phenology-transferability --pattern '*.tar.gz' --pattern SHA256SUMS --dir outputs/release_assets
 (cd outputs/release_assets && shasum -a 256 -c SHA256SUMS)
-for asset in outputs/release_assets/*.tar.gz; do tar -xzf "$asset"; done
+tar -xzf outputs/release_assets/study_model_ready_data.tar.gz
+mkdir -p data
+tar -xzf outputs/release_assets/annual_temperature_transfer_results.tar.gz -C data
+tar -xzf outputs/release_assets/year_matched_exploration_results.tar.gz -C data
+tar -xzf outputs/release_assets/full_source_results.tar.gz
+tar -xzf outputs/release_assets/evaluation_evidence.tar.gz
 ```
 
-Proceed with extraction only when every checksum passes. Each archive restores its recorded `data/` subdirectories relative to the repository root. The `manifest.json` inventory records every distributed file, including files restored from these archives. Provider credentials and access to the original workstation are unnecessary for saved-result reproduction.
+Proceed with extraction only when every checksum passes. The extraction commands preserve the historical archive layouts while restoring all required `data/` subdirectories. `release_assets.json` records the extraction directory for each archive. The base dataset archive additionally contains its original root-level study manifest, retained as provenance. The `manifest.json` inventory records every distributed file, including files restored from these archives. Provider credentials and access to the original workstation are unnecessary for saved-result reproduction.
 
 ## Offline numerical reproduction
 

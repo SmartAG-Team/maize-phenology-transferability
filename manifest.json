@@ -25,13 +25,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 8617,
-      "sha256": "a7fb1aebc0638271ead71973f5bc8d05f16cab385e4a4509b328f6692d501c5d"
+      "bytes": 9451,
+      "sha256": "551c9ca34c9517741dcfafa4cdc4fee20e165ece5f8ac00783b6f59074819db3"
     },
     {
       "path": "SHA256SUMS",
-      "bytes": 463,
-      "sha256": "bee394e5fe75d62ef882054d8d4773fa95afad487595a7306f6751d355435e5c"
+      "bytes": 497,
+      "sha256": "576b658af012be098c66556e289296f61ee907bca46689315c8e6a4987db3c5c"
     },
     {
       "path": "SOURCE_PROVENANCE.json",
@@ -15715,8 +15715,8 @@
     },
     {
       "path": "release_assets.json",
-      "bytes": 2104,
-      "sha256": "a13e712eccf38dfeedc972fb07818832c50e8b06497e324a1f02b395d63825a2"
+      "bytes": 2492,
+      "sha256": "3deb2fee3dae853c169659de6be0514feed4f789e0173c13d4ef5db12ccc5dba"
     },
     {
       "path": "requirements.lock.txt",
